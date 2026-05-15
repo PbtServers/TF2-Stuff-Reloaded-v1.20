@@ -1,0 +1,73 @@
+package rafradek.tf2weapons.entity.projectile;
+
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.InteractionHand;
+import rafradek.tf2weapons.util.EnumParticleTypes;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.level.Level;
+import rafradek.tf2weapons.TF2ConfigVars;
+import rafradek.tf2weapons.client.ClientProxy;
+import rafradek.tf2weapons.item.ItemFromData;
+import rafradek.tf2weapons.util.PropertyType;
+
+public class EntityRocket extends EntityProjectileBase {
+
+	public EntityRocket(Level p_i1756_1_) {
+		super(p_i1756_1_);
+		if (p_i1756_1_.isRemote)
+			ClientProxy.spawnRocketParticle(this.world, this);
+		if (TF2ConfigVars.dynamicLights)
+			this.makeLit();
+	}
+
+	@Override
+	public void initProjectile(LivingEntity shooter, InteractionHand hand, ItemStack weapon) {
+		String name = ItemFromData.getData(weapon).getString(PropertyType.PROJECTILE);
+		if (name.equals("cowmangler"))
+			this.setType(1);
+		super.initProjectile(shooter, hand, weapon);
+	}
+
+	@Override
+	public void onHitGround(int x, int y, int z, HitResult mop) {
+		this.explode(mop.hitVec.x + mop.sideHit.getFrontOffsetX() * 0.02,
+				mop.hitVec.y + mop.sideHit.getFrontOffsetY() * 0.02,
+				mop.hitVec.z + mop.sideHit.getFrontOffsetZ() * 0.02, null, 1f);
+	}
+
+	@Override
+	public void onHitMob(Entity entityHit, HitResult mop) {
+		this.explode(mop.hitVec.x, mop.hitVec.y, mop.hitVec.z, mop.entityHit, 1f);
+	}
+
+	public double maxMotion() {
+		return Math.max(this.motionX, Math.max(this.motionY, this.motionZ));
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+
+	}
+
+	@Override
+	public void spawnParticles(double x, double y, double z) {
+		if (this.isInWater())
+			this.world.spawnParticle(EnumParticleTypes.WATER_BUBBLE, x, y, z, this.motionX, this.motionY, this.motionZ);
+		else
+			this.world.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, x, y, z, 0, 0, 0);
+	}
+
+	@Override
+	protected float getSpeed() {
+		return 1.04f;
+	}
+
+	@Override
+	public double getGravity() {
+		return 0;
+	}
+
+}

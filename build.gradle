@@ -1,123 +1,152 @@
-buildscript {
-    repositories {
-        maven { url = 'https://files.minecraftforge.net/maven' }
-		maven { url 'https://www.cursemaven.com' }
-		maven { url "https://repo.spongepowered.org/repository/maven-public/" }
-        jcenter()
-        mavenCentral()
-		gradlePluginPortal()
-    }
-    dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'
-		classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
-		classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.4'
-    }
+plugins {
+    id 'eclipse'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '6.0.24' // Usamos una versión fija para evitar problemas de resolución
+    id 'org.spongepowered.mixin' version '0.7.+'
+    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
-        
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.spongepowered.mixin'
-apply plugin: 'com.github.johnrengelman.shadow'
-apply plugin: 'java'
 
-version = "1.12.2-1.7.3a"
-group= "rafradek.TF2weapons"
-archivesBaseName = "TF2-Stuff-Reloaded"
+version = "1.20.1-1.7.3a"
+group = "rafradek.tf2weapons"
+archivesBaseName = "TF2-Stuff-Reloaded-v1.20"
 
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
-    mappings channel: 'snapshot', version: '20171003-1.12'
+    // Mappings actualizados para 1.20.1
+    mappings channel: 'official', version: '1.20.1'
     
-    accessTransformer = file('src/main/resources/META-INF/tf2_at.cfg')
+    // TODO 1.20.1 port: re-enable once the legacy 1.12.2 AT entries are remapped.
+    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
     runs {
         client {
             workingDirectory project.file('run')
-
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-
+            property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            property 'forge.enabledGameTestNamespaces', 'tf2weapons'
+            mods {
+                tf2weapons {
+                    source sourceSets.main
+                }
+            }
         }
 
         server {
-
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            mods {
+                tf2weapons {
+                    source sourceSets.main
+                }
+            }
         }
     }
 }
 
 mixin {
     add sourceSets.main, "mixins.tf2stuff-reloaded.refmap.json"
+    config "mixins.tf2stuff-reloaded.json"
 }
 
 repositories {
-    maven { url = 'https://repo.spongepowered.org/maven' }
-    maven { url = 'https://www.cursemaven.com'}
-}
-
-configurations {
-    embed
-    compile.extendsFrom(embed)
+    maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+    maven { url = 'https://www.cursemaven.com' }
+	maven {
+        // Repositorio oficial de JEI (mezz)
+        name = "ProgWML6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    mavenCentral()
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2860'
-	implementation "org.spongepowered:mixin:0.8"
-	implementation 'curse.maven:jei-238222:3043174'
-	implementation 'curse.maven:dynamiclights-227874:2563244'
-	implementation 'curse.maven:cofhcore-69162:2920433'
-	implementation 'curse.maven:thermalfoundation-222880:2926428'
-	implementation 'curse.maven:thermalexpansion-69163:2926431'
+    minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
+    
+    // Usando el maven oficial es mucho más estable
+    //compileOnly fg.deobf("mezz.jei:jei-1.20.1-forge-api:15.2.0.27")
+    //runtimeOnly fg.deobf("mezz.jei:jei-1.20.1-forge:15.2.0.27")
+    
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
-jar {
+sourceSets.main.java {
+    // TODO 1.20.1 port: re-enable the legacy client and mixin sources once the
+    // server/common layer compiles and the renderer/GUI APIs are migrated.
+    exclude 'rafradek/tf2weapons/arena/**'
+    exclude 'rafradek/tf2weapons/block/**'
+    exclude 'rafradek/tf2weapons/client/**'
+    exclude 'rafradek/tf2weapons/TF2weapons.java'
+    exclude 'rafradek/tf2weapons/TF2EventsCommon.java'
+    exclude 'rafradek/tf2weapons/TF2PlayerCapability.java'
+    exclude 'rafradek/tf2weapons/common/TF2Achievements.java'
+    exclude 'rafradek/tf2weapons/common/TF2Attribute.java'
+    exclude 'rafradek/tf2weapons/common/WeaponsCapability.java'
+    exclude 'rafradek/tf2weapons/contract/**'
+    exclude 'rafradek/tf2weapons/command/**'
+    exclude 'rafradek/tf2weapons/entity/ai/**'
+    exclude 'rafradek/tf2weapons/entity/boss/**'
+    exclude 'rafradek/tf2weapons/entity/building/**'
+    exclude 'rafradek/tf2weapons/entity/EntityArmorStand.java'
+    exclude 'rafradek/tf2weapons/entity/EntityDummy.java'
+    exclude 'rafradek/tf2weapons/entity/EntityLightDynamic.java'
+    exclude 'rafradek/tf2weapons/entity/EntityPickup.java'
+    exclude 'rafradek/tf2weapons/entity/EntityStatue.java'
+    exclude 'rafradek/tf2weapons/entity/EntityTarget.java'
+    exclude 'rafradek/tf2weapons/entity/IEntityTF2.java'
+    exclude 'rafradek/tf2weapons/entity/mercenary/**'
+    exclude 'rafradek/tf2weapons/entity/projectile/**'
+    exclude 'rafradek/tf2weapons/inventory/**'
+    exclude 'rafradek/tf2weapons/item/**'
+    exclude 'rafradek/tf2weapons/item/ItemCrate.java'
+    exclude 'rafradek/tf2weapons/item/ItemFromData.java'
+    exclude 'rafradek/tf2weapons/item/crafting/**'
+    exclude 'rafradek/tf2weapons/jei/**'
+    exclude 'rafradek/tf2weapons/loot/**'
+    exclude 'rafradek/tf2weapons/message/**'
+    exclude 'rafradek/tf2weapons/mixin/**'
+    exclude 'rafradek/tf2weapons/registry/TF2BlockEntities.java'
+    exclude 'rafradek/tf2weapons/tileentity/**'
+    exclude 'rafradek/tf2weapons/util/WeaponData.java'
+}
+
+tasks.named('processResources', ProcessResources).configure {
+    var replaceProperties = [
+            minecraft_version: "1.20.1",
+            version: project.version
+    ]
+    inputs.properties replaceProperties
+
+    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
+        expand replaceProperties
+    }
+}
+
+tasks.named('jar', Jar).configure {
     manifest {
         attributes([
-            "Specification-Title": "TF2weapons",
-            "Specification-Vendor": "rafradek",
-            "Specification-Version": "1", // We are version 1 of ourselves
-            "Implementation-Title": project.name,
-            "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"rafradek",
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-			"FMLAT": "tf2_at.cfg",
-			"ForceLoadAsMod": "true",
-			"FMLCorePluginContainsFMLMod": true,
-			"TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
-			"MixinConfigs": "mixins.tf2stuff-reloaded.json"
+                "Specification-Title"     : "TF2weapons",
+                "Specification-Vendor"    : "rafradek",
+                "Specification-Version"   : "1",
+                "Implementation-Title"    : project.name,
+                "Implementation-Version"  : project.version,
+                "Implementation-Vendor"   : "rafradek",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
-        
     }
+    finalizedBy 'reobfJar'
 }
 
-shadowJar {
-	classifier = ''
-	exclude 'LICENSE.txt'
-	dependencies {
-		include(dependency("org.spongepowered:mixin:0.8"))
-	}
-}
-
-build.dependsOn(shadowJar)
-
-reobf {
-    shadowJar {}
-}
-
-build.dependsOn(reobf)
-
-processResources {
-    inputs.property "version", project.version
-    inputs.property "mcversion", "1.12.2"
-
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-        expand 'version':project.version, 'mcversion':"1.12.2"
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact jar
+        }
     }
-        
-    from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
+    repositories {
+        maven {
+            url "file://${project.projectDir}/mcmodsrepo"
+        }
     }
 }

@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="LGPL-2.1-only"
+issueTrackerURL="https://github.com/rafradek/Mods/issues"
+
+[[mods]]
+modId="rafradek_tf2_weapons"
+version="${version}"
+displayName="TF2 Stuff Reloaded"
+displayURL="https://legacy.curseforge.com/minecraft/mc-mods/tf2-stuff-mod"
+authors="rafradek, Grodax_, Wolfkann"
+description='''
+Team Fortress 2 themed weapons, mobs, blocks, and systems.
+'''
+
+[[dependencies.rafradek_tf2_weapons]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.rafradek_tf2_weapons]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.20.2)"
+ordering="NONE"
+side="BOTH"

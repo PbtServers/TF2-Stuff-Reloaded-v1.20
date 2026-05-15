@@ -1,0 +1,105 @@
+package rafradek.tf2weapons.entity.projectile;
+
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.level.Level;
+import rafradek.tf2weapons.TF2weapons;
+import rafradek.tf2weapons.client.ClientProxy;
+import rafradek.tf2weapons.common.TF2Attribute;
+import rafradek.tf2weapons.item.ItemFromData;
+import rafradek.tf2weapons.item.ItemSniperRifle;
+import rafradek.tf2weapons.util.PropertyType;
+import rafradek.tf2weapons.util.TF2Util;
+
+public class EntityProjectileSimple extends EntityProjectileBase {
+
+	float damage = -1;
+	boolean impact = false;
+
+	public EntityProjectileSimple(Level world) {
+		super(world);
+		this.setSize(0.3F, 0.3F);
+	}
+
+	@Override
+	public void initProjectile(LivingEntity shooter, InteractionHand hand, ItemStack weapon) {
+		String name = ItemFromData.getData(weapon).getString(PropertyType.PROJECTILE);
+		if (name.equals("repairclaw"))
+			this.setType(0);
+		else if (name.equals("syringe"))
+			this.setType(1);
+		else if (name.equals("cleaver"))
+			this.setType(2);
+		else if (name.equals("arrow"))
+			this.setType(3);
+		else if (name.equals("pomson"))
+			this.setType(4);
+		else if (name.equals("hhhaxe"))
+			this.setType(8);
+
+		super.initProjectile(shooter, hand, weapon);
+		this.setSize(0.3F, 0.3F);
+		if (this.usedWeapon.getTagCompound().getBoolean("ArrowLit")) {
+			this.usedWeaponOrig.getTagCompound().setBoolean("ArrowLit", false);
+			this.setFire(1000);
+		}
+	}
+
+	@Override
+	public void onHitGround(int x, int y, int z, HitResult mop) {
+		if (!this.world.isRemote) {
+			this.impact = true;
+
+			if (ItemFromData.getData(this.usedWeapon).hasProperty(PropertyType.HIT_SOUND)) {
+				SoundEvent event = ItemFromData.getData(this.usedWeapon).hasProperty(PropertyType.HIT_WORLD_SOUND)
+						? ItemFromData.getSound(this.usedWeapon, PropertyType.HIT_WORLD_SOUND)
+						: ItemFromData.getSound(this.usedWeapon, PropertyType.HIT_SOUND);
+				this.playSound(event, 1.3f, 1f);
+			}
+
+			if (TF2Attribute.getModifier("Destroy Block", this.usedWeapon, 0, shootingEntity) > 0) {
+
+				float damage = this.damage;
+				if (damage == -1) {
+					damage = TF2Util.calculateDamage(TF2weapons.dummyEnt, this.world, this.shootingEntity,
+							this.usedWeapon, this.getCritical(),
+							(float) this.shootingEntity.getPositionVector().distanceTo(mop.hitVec));
+					if (this.usedWeapon.getItem() instanceof ItemSniperRifle)
+						damage *= 2.52f;
+					damage *= TF2Attribute.getModifier("Destroy Block", this.usedWeapon, 0, this.shootingEntity);
+				}
+				this.damage = TF2Util.damageBlock(mop.getBlockPos(), this.shootingEntity, this.world, this.usedWeapon,
+						this.getCritical(), damage, null, null);
+				if (this.damage <= 0)
+					this.setDead();
+			} else
+				this.setDead();
+		}
+	}
+
+	@Override
+	public void onHitMob(Entity entityHit, HitResult mop) {
+		attackDirect(entityHit, 1, mop.hitInfo instanceof Boolean ? (Boolean) mop.hitInfo : false, mop.hitVec);
+	}
+
+	@Override
+	public void spawnParticles(double x, double y, double z) {
+		if (this.getType() == 4) {
+			ClientProxy.spawnBisonParticle(world, x, y, z, TF2Util.getTeamColor(this.shootingEntity));
+		}
+	}
+
+	@Override
+	public boolean isPushable() {
+		return this.getType() != 1;
+	}
+
+	@Override
+	public double getGravity() {
+		return this.getType() == 4 ? 0 : super.getGravity();
+	}
+}
