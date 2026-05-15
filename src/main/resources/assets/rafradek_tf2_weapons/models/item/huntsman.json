@@ -1,7 +1,7 @@
 {
     "parent": "item/bow",
     "textures": {
-        "layer0": "rafradek_tf2_weapons:items/huntsman"
+        "layer0": "rafradek_tf2_weapons:item/huntsman"
     },
     "display": {
         "thirdperson_righthand": {

@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench, Original Pistol model by FaithSDK",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/winger",
-		"particle": "rafradek_tf2_weapons:items/winger"
+		"0": "rafradek_tf2_weapons:item/winger",
+		"particle": "rafradek_tf2_weapons:item/winger"
 	},
 	"elements": [
 		{

@@ -1,8 +1,8 @@
 {
 	"credit": "By FaithSDK, Made with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/panic_attack",
-		"particle": "rafradek_tf2_weapons:items/panic_attack"
+		"0": "rafradek_tf2_weapons:item/panic_attack",
+		"particle": "rafradek_tf2_weapons:item/panic_attack"
 	},
 	"elements": [
 		{

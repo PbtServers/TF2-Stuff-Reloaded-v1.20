@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench, Original Sandman model by FaithSDK",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/bostonbasher",
-		"particle": "rafradek_tf2_weapons:items/bostonbasher"
+		"0": "rafradek_tf2_weapons:item/bostonbasher",
+		"particle": "rafradek_tf2_weapons:item/bostonbasher"
 	},
 	"elements": [
 		{

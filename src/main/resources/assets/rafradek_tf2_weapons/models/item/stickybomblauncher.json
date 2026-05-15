@@ -1,8 +1,8 @@
 {
 	"credit": "By FaithSDK, Made with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/stickybomblauncher",
-		"particle": "rafradek_tf2_weapons:items/stickybomblauncher"
+		"0": "rafradek_tf2_weapons:item/stickybomblauncher",
+		"particle": "rafradek_tf2_weapons:item/stickybomblauncher"
 	},
 	"elements": [
 		{

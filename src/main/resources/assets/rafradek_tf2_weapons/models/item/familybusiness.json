@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench, Original Shotgun model by FaithSDK",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/familybusiness",
-		"particle": "rafradek_tf2_weapons:items/familybusiness"
+		"0": "rafradek_tf2_weapons:item/familybusiness",
+		"particle": "rafradek_tf2_weapons:item/familybusiness"
 	},
 	"elements": [
 		{

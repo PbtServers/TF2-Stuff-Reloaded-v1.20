@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/cowmangler",
-		"particle": "rafradek_tf2_weapons:items/cowmangler"
+		"0": "rafradek_tf2_weapons:item/cowmangler",
+		"particle": "rafradek_tf2_weapons:item/cowmangler"
 	},
 	"elements": [
 		{

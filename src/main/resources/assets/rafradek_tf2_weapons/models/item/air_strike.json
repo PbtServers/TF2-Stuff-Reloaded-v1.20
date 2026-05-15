@@ -1,7 +1,7 @@
 {
 	"__comment": "Designed by Rafał with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"texture": "rafradek_tf2_weapons:items/air_strike"
+		"texture": "rafradek_tf2_weapons:item/air_strike"
 	},
 	"elements": [ 	 
 		{

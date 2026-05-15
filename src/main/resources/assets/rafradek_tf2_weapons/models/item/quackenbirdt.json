@@ -1,9 +1,9 @@
 {
 	"credit": "Made by dsaf with Blockbench, Original model by Rafał",
 	"textures": {
-		"1": "rafradek_tf2_weapons:items/quackenbirdt",
-		"atlas": "rafradek_tf2_weapons:items/cloak1",
-		"particle": "rafradek_tf2_weapons:items/quackenbirdt"
+		"1": "rafradek_tf2_weapons:item/quackenbirdt",
+		"atlas": "rafradek_tf2_weapons:item/cloak1",
+		"particle": "rafradek_tf2_weapons:item/quackenbirdt"
 	},
 	"elements": [
 		{

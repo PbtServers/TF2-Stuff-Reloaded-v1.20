@@ -1,7 +1,7 @@
 {
 	"credit": "Made by dsaf with Blockbench, Original Detonator model by lundgren1957",
 	"textures": {
-		"PistoletDetresse": "rafradek_tf2_weapons:items/scorchshot"
+		"PistoletDetresse": "rafradek_tf2_weapons:item/scorchshot"
 	},
 	"elements": [
 		{

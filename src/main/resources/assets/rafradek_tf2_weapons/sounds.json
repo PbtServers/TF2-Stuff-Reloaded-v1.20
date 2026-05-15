@@ -2342,61 +2342,61 @@
 	"mob.saxton.death": {
 		"category": "hostile",
 		"sounds": [
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_saxtondead01",
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_saxtondead03"
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_saxtondead01",
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_saxtondead03"
 		]
 	},
 	"mob.saxton.jump": {
 		"category": "hostile",
 		"sounds": [
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_jump01",
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_jump02",
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_jump03",
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_jump04"
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_jump01",
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_jump02",
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_jump03",
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_jump04"
 		]
 	},
 	"mob.saxton.stab": {
 		"category": "hostile",
 		"sounds": [
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_stub01",
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_stub02",
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_stub03",
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_stub04"
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_stub01",
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_stub02",
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_stub03",
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_stub04"
 		]
 	},
 	"mob.saxton.rage": {
 		"category": "hostile",
 		"sounds": [
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_rage01",
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_rage02",
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_rage03"
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_rage01",
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_rage02",
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_rage03"
 		]
 	},
 	"mob.saxton.start": {
 		"category": "hostile",
 		"sounds": [
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_battlecry03",
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_battlecry05",
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_battlecry08",
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_battlecry09"
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_battlecry03",
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_battlecry05",
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_battlecry08",
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_battlecry09"
 		]
 	},
 	"mob.saxton.destroy": {
 		"category": "hostile",
 		"sounds": [
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_killingbuilding01"
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_killingbuilding01"
 		]
 	},
 	"mob.saxton.kill": {
 		"category": "hostile",
 		"sounds": [
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_killingsomeone01",
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_killingsomeone02",
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_killingsomeone03",
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_killingsomeone04",
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_killingsomeone05",
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_killingspree01",
-			"rafradek_tf2_weapons:mob/saxton/Saxton_Hale_killingspree02"
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_killingsomeone01",
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_killingsomeone02",
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_killingsomeone03",
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_killingsomeone04",
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_killingsomeone05",
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_killingspree01",
+			"rafradek_tf2_weapons:mob/saxton/saxton_hale_killingspree02"
 		]
 	},
 	"mob.hhh.start": {

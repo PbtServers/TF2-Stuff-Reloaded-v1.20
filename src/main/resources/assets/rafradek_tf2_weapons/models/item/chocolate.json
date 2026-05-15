@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "rafradek_tf2_weapons:items/chocolate"
+        "layer0": "rafradek_tf2_weapons:item/chocolate"
     }
 }

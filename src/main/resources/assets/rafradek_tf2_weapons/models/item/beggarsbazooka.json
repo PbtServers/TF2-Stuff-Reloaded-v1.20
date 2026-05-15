@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench, Original Rocket Launcher model by Unknown",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/beggarsbazooka",
-		"particle": "rafradek_tf2_weapons:items/beggarsbazooka"
+		"0": "rafradek_tf2_weapons:item/beggarsbazooka",
+		"particle": "rafradek_tf2_weapons:item/beggarsbazooka"
 	},
 	"elements": [
 		{

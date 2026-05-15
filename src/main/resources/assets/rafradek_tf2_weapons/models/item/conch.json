@@ -1,19 +1,19 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "rafradek_tf2_weapons:items/conch"
+        "layer0": "rafradek_tf2_weapons:item/conch"
     },
     "overrides": [
         {
             "predicate": {
-                "bodyModel": 1,
+                "body_model": 1,
                 "active": 0
             },
             "model": "rafradek_tf2_weapons:item/conch_body"
         },
         {
             "predicate": {
-                "bodyModel": 1,
+                "body_model": 1,
                 "active": 1
             },
             "model": "rafradek_tf2_weapons:item/conch_body_active"

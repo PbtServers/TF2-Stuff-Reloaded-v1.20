@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench, Original Minigun model by FaithSDK",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/natascha",
-		"particle": "rafradek_tf2_weapons:items/natascha"
+		"0": "rafradek_tf2_weapons:item/natascha",
+		"particle": "rafradek_tf2_weapons:item/natascha"
 	},
 	"elements": [
 		{

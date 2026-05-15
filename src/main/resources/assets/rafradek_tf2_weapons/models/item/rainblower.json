@@ -1,7 +1,7 @@
 {
 	"parent": "rafradek_tf2_weapons:item/rainblowerparent",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/rainblower"
+		"0": "rafradek_tf2_weapons:item/rainblower"
 	},
 	"overrides": [
         {

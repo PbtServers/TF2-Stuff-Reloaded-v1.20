@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/fists",
-		"particle": "rafradek_tf2_weapons:items/fists"
+		"0": "rafradek_tf2_weapons:item/fists",
+		"particle": "rafradek_tf2_weapons:item/fists"
 	},
 	"elements": [
 		{

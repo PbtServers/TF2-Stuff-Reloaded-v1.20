@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"parent": "rafradek_tf2_weapons:item/hat",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/anvil_base",
-		"1": "rafradek_tf2_weapons:items/beacon"
+		"0": "rafradek_tf2_weapons:item/anvil_base",
+		"1": "rafradek_tf2_weapons:item/beacon"
 	},
 	"elements": [
 		{

@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench, Original Syringe Gun model by FaithSDK",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/blutsauger",
-		"particle": "rafradek_tf2_weapons:items/blutsauger"
+		"0": "rafradek_tf2_weapons:item/blutsauger",
+		"particle": "rafradek_tf2_weapons:item/blutsauger"
 	},
 	"elements": [
 		{

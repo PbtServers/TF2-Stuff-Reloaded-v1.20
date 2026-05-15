@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench, Original Bat model by FaithSDK",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/batsaber",
-		"particle": "rafradek_tf2_weapons:items/batsaber"
+		"0": "rafradek_tf2_weapons:item/batsaber",
+		"particle": "rafradek_tf2_weapons:item/batsaber"
 	},
 	"overrides": [
         {

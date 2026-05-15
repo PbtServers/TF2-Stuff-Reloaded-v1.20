@@ -1,9 +1,9 @@
 {
 	"credit": "Made by dsaf with Blockbench, Original Force-A-Nature model made by Rafał",
 	"textures": {
-		"1": "rafradek_tf2_weapons:items/critacola",
-		"texture": "rafradek_tf2_weapons:items/force_nature",
-		"particle": "rafradek_tf2_weapons:items/critacola"
+		"1": "rafradek_tf2_weapons:item/critacola",
+		"texture": "rafradek_tf2_weapons:item/force_nature",
+		"particle": "rafradek_tf2_weapons:item/critacola"
 	},
 	"elements": [
 		{

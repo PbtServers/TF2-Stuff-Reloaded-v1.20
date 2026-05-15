@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "rafradek_tf2_weapons:items/door_controller_blu"
+        "layer0": "rafradek_tf2_weapons:item/door_controller_blu"
     }
 }

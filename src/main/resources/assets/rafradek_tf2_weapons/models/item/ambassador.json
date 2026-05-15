@@ -1,8 +1,8 @@
 {
 	"credit": "By FaithSDK, Made with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/ambassador",
-		"particle": "rafradek_tf2_weapons:items/ambassador"
+		"0": "rafradek_tf2_weapons:item/ambassador",
+		"particle": "rafradek_tf2_weapons:item/ambassador"
 	},
 	"elements": [
 		{

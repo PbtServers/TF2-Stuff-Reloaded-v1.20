@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench, Original Syringe Gun model by FaithSDK",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/overdose",
-		"particle": "rafradek_tf2_weapons:items/overdose"
+		"0": "rafradek_tf2_weapons:item/overdose",
+		"particle": "rafradek_tf2_weapons:item/overdose"
 	},
 	"elements": [
 		{

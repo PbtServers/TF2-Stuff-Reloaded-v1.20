@@ -1,9 +1,9 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/mushroom_block_skin_red",
-		"1": "rafradek_tf2_weapons:items/wool_colored_white",
-		"2": "rafradek_tf2_weapons:items/wool_colored_yellow"
+		"0": "rafradek_tf2_weapons:item/mushroom_block_skin_red",
+		"1": "rafradek_tf2_weapons:item/wool_colored_white",
+		"2": "rafradek_tf2_weapons:item/wool_colored_yellow"
 	},
 	"elements": [
 		{

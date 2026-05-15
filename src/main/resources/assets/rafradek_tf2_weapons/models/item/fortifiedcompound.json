@@ -1,7 +1,7 @@
 {
     "parent": "item/bow",
     "textures": {
-        "layer0": "rafradek_tf2_weapons:items/fortifiedcompound"
+        "layer0": "rafradek_tf2_weapons:item/fortifiedcompound"
     },
     "display": {
         "thirdperson_righthand": {

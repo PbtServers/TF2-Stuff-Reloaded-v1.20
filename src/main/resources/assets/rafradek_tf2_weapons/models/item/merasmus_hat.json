@@ -1,7 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"atlas": "rafradek_tf2_weapons:items/merasmus_hat"
+		"atlas": "rafradek_tf2_weapons:item/merasmus_hat"
 	},
 	"elements": [
 		{

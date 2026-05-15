@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "rafradek_tf2_weapons:items/strangifier"
+        "layer0": "rafradek_tf2_weapons:item/strangifier"
     }
 }

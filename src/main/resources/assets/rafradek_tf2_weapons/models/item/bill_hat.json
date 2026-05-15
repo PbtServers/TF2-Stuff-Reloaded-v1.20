@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/bill_hat",
-		"particle": "rafradek_tf2_weapons:items/bill_hat"
+		"0": "rafradek_tf2_weapons:item/bill_hat",
+		"particle": "rafradek_tf2_weapons:item/bill_hat"
 	},
 	"elements": [
 		{

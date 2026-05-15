@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/freedomstaff",
-		"particle": "rafradek_tf2_weapons:items/freedomstaff"
+		"0": "rafradek_tf2_weapons:item/freedomstaff",
+		"particle": "rafradek_tf2_weapons:item/freedomstaff"
 	},
 	"elements": [
 		{

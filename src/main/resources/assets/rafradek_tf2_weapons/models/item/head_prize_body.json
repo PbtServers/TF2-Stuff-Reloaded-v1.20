@@ -1,7 +1,7 @@
 {
 	"__comment": "Designed by Rafał with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"head_prize_body": "rafradek_tf2_weapons:items/head_prize_body"
+		"head_prize_body": "rafradek_tf2_weapons:item/head_prize_body"
 	},
 	"elements": [ 	 
 		{

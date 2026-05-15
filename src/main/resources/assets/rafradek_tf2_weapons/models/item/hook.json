@@ -1,7 +1,7 @@
 {
 	"parent": "item/handheld",
 	"textures": {
-		"layer0": "rafradek_tf2_weapons:items/hook"
+		"layer0": "rafradek_tf2_weapons:item/hook"
 	},
 	"display": {
 		"firstperson_righthand": {

@@ -1,7 +1,7 @@
 {
 	"__comment": "This model was created by lundgren1957 with Blender and add-on Blender2Minecraft",
 	"textures": {
-		"FusilPompe": "rafradek_tf2_weapons:items/rescue_ranger"
+		"FusilPompe": "rafradek_tf2_weapons:item/rescue_ranger"
 	},
 	"elements": [
 		{

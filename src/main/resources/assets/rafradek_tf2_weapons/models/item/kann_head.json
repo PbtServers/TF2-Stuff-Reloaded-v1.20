@@ -1,9 +1,9 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/kann_head",
-		"particle": "rafradek_tf2_weapons:items/kann_head",
-		"1": "rafradek_tf2_weapons:items/kann_head2"
+		"0": "rafradek_tf2_weapons:item/kann_head",
+		"particle": "rafradek_tf2_weapons:item/kann_head",
+		"1": "rafradek_tf2_weapons:item/kann_head2"
 	},
 	"elements": [
 		{

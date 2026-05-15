@@ -1,7 +1,7 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "rafradek_tf2_weapons:items/apocofists"
+        "layer0": "rafradek_tf2_weapons:item/apocofists"
     },
     "display": {
         "thirdperson_righthand": {

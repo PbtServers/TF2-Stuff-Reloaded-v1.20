@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench, Original Chargin Targe model by Rafa?",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/splendidscreen",
-		"particle": "rafradek_tf2_weapons:items/splendidscreen"
+		"0": "rafradek_tf2_weapons:item/splendidscreen",
+		"particle": "rafradek_tf2_weapons:item/splendidscreen"
 	},
 	"elements": [
 		{

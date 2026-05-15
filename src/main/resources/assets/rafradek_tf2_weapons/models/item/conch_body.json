@@ -1,7 +1,7 @@
 {
     "parent": "block/block",
     "textures": {
-        "0": "rafradek_tf2_weapons:items/conch_body"
+        "0": "rafradek_tf2_weapons:item/conch_body"
     },
     "elements": [
         {

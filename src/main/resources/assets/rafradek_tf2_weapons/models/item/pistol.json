@@ -1,8 +1,8 @@
 {
 	"credit": "By FaithSDK, Made with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/pistol",
-		"particle": "rafradek_tf2_weapons:items/pistol"
+		"0": "rafradek_tf2_weapons:item/pistol",
+		"particle": "rafradek_tf2_weapons:item/pistol"
 	},
 	"elements": [
 		{

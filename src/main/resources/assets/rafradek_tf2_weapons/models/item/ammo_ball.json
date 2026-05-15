@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "rafradek_tf2_weapons:items/ammo_ball"
+        "layer0": "rafradek_tf2_weapons:item/ammo_ball"
     }
 }

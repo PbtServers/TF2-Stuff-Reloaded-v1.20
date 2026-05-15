@@ -1,8 +1,8 @@
 {
 	"credit": "By FaithSDK, Made with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/machina",
-		"particle": "rafradek_tf2_weapons:items/machina"
+		"0": "rafradek_tf2_weapons:item/machina",
+		"particle": "rafradek_tf2_weapons:item/machina"
 	},
 	"elements": [
 		{

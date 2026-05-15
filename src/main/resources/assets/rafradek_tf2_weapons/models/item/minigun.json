@@ -1,8 +1,8 @@
 {
 	"credit": "By FaithSDK, Made with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/minigun",
-		"particle": "rafradek_tf2_weapons:items/minigun"
+		"0": "rafradek_tf2_weapons:item/minigun",
+		"particle": "rafradek_tf2_weapons:item/minigun"
 	},
 	"elements": [
 		{

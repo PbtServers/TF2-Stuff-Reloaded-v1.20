@@ -1,9 +1,9 @@
 {
 	"textures": {
-		"texture0": "rafradek_tf2_weapons:items/flamethrower0",
-		"texture1": "rafradek_tf2_weapons:items/flamethrower1",
-		"transparent": "rafradek_tf2_weapons:items/transparent",
-		"particle": "rafradek_tf2_weapons:items/flamethrower0"
+		"texture0": "rafradek_tf2_weapons:item/flamethrower0",
+		"texture1": "rafradek_tf2_weapons:item/flamethrower1",
+		"transparent": "rafradek_tf2_weapons:item/transparent",
+		"particle": "rafradek_tf2_weapons:item/flamethrower0"
 	},
 	"overrides": [
         {

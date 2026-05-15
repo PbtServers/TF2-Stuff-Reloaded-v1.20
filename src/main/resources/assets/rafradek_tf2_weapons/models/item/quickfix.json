@@ -1,7 +1,7 @@
 {
 	"parent": "rafradek_tf2_weapons:item/quickfixparent",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/quickfix"
+		"0": "rafradek_tf2_weapons:item/quickfix"
 	},
 	"overrides": [
         {

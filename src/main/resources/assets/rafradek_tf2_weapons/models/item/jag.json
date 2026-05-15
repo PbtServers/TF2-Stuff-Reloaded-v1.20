@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "rafradek_tf2_weapons:items/jag"
+        "layer0": "rafradek_tf2_weapons:item/jag"
     }
 }

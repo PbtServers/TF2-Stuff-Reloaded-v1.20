@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench, Original revolver model by FaithSDK",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/enforcer",
-		"particle": "rafradek_tf2_weapons:items/enforcer"
+		"0": "rafradek_tf2_weapons:item/enforcer",
+		"particle": "rafradek_tf2_weapons:item/enforcer"
 	},
 	"elements": [
 		{

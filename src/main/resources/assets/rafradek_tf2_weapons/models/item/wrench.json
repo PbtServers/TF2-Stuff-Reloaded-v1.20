@@ -1,9 +1,9 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "rafradek_tf2_weapons:items/wrench",
-		"2": "rafradek_tf2_weapons:items/gunslinger",
-		"particle": "rafradek_tf2_weapons:items/wrench"
+		"1": "rafradek_tf2_weapons:item/wrench",
+		"2": "rafradek_tf2_weapons:item/gunslinger",
+		"particle": "rafradek_tf2_weapons:item/wrench"
 	},
 	"elements": [
 		{

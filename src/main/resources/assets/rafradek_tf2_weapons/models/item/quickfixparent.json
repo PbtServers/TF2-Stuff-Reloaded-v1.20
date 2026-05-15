@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench, Original medigun model by FaithSDK",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/quickfix",
-		"particle": "rafradek_tf2_weapons:items/quickfix"
+		"0": "rafradek_tf2_weapons:item/quickfix",
+		"particle": "rafradek_tf2_weapons:item/quickfix"
 	},
 	"elements": [
 		{

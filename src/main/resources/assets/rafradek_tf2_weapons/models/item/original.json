@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench, Original Rocket Launcher model by Unknown",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/original",
-		"particle": "rafradek_tf2_weapons:items/original"
+		"0": "rafradek_tf2_weapons:item/original",
+		"particle": "rafradek_tf2_weapons:item/original"
 	},
 	"elements": [
 		{

@@ -1,7 +1,7 @@
 {
 	"credit": "Model created by wolfkann with blockbench",
 	"textures": {
-        "0": "rafradek_tf2_weapons:items/gunslinger"
+        "0": "rafradek_tf2_weapons:item/gunslinger"
 	},
 	"elements": [
 		{

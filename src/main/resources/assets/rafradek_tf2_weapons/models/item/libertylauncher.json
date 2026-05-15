@@ -2,8 +2,8 @@
 	"credit": "Made by dsaf with Blockbench, Original Direct Hit model by Rafał",
 	"texture_size": [48, 48],
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/libertylauncher",
-		"particle": "rafradek_tf2_weapons:items/libertylauncher"
+		"0": "rafradek_tf2_weapons:item/libertylauncher",
+		"particle": "rafradek_tf2_weapons:item/libertylauncher"
 	},
 	"elements": [
 		{

@@ -1,1 +1,15 @@
 ./gradlew.bat clean build --refresh-dependencies -Dorg.gradle.java.home="G:\Programas\zulu-17"
+
+Sí, ahora mismo es un placeholder funcional.
+Lo que está pasando: ya cargamos los WeaponData de weapons.json, pero muchas armas todavía se están representando con el Item base de su clase (knife, melee, bullet, projectile, etc.). Si una entrada cae en una clase que usa el modelo/textura del cuchillo, verás cuchillo aunque el arma sea otra.
+En esta fase prioricé que:
+•
+Minecraft aceptara los recursos en formato 1.20.1.
+•
+Los modelos no rompieran el cargador.
+•
+Los datos de 216 armas cargaran.
+•
+Las texturas dejaran de salir como textura inválida.
+La siguiente fase natural es corregir el mapeo visual real: que cada stack con NBT Type use el modelo correcto del arma (rocketlauncher, shotgun, scattergun, etc.) en vez del modelo base de clase. Eso normalmente se hace con overrides/model predicates o con un sistema cliente que lea el Type del item y resuelva modelo por arma.
+Así que sí: no es que esas texturas estén “mal” necesariamente; es que todavía falta conectar cada arma real con su modelo real.

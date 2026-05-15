@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/nineiron",
-		"particle": "rafradek_tf2_weapons:items/nineiron"
+		"0": "rafradek_tf2_weapons:item/nineiron",
+		"particle": "rafradek_tf2_weapons:item/nineiron"
 	},
 	"elements": [
 		{

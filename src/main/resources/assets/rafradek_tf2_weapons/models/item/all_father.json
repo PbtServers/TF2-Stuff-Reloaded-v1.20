@@ -1,7 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"all_father": "rafradek_tf2_weapons:items/all_father"
+		"all_father": "rafradek_tf2_weapons:item/all_father"
 	},
 	"elements": [
 		{

@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "rafradek_tf2_weapons:items/gas_passer"
+        "layer0": "rafradek_tf2_weapons:item/gas_passer"
     }
 }

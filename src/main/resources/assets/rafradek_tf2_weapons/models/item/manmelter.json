@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/manmelter",
-		"particle": "rafradek_tf2_weapons:items/manmelter"
+		"0": "rafradek_tf2_weapons:item/manmelter",
+		"particle": "rafradek_tf2_weapons:item/manmelter"
 	},
 	"overrides": [
         {

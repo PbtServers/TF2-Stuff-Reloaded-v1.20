@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "rafradek_tf2_weapons:items/market_gardener"
+        "layer0": "rafradek_tf2_weapons:item/market_gardener"
     }
 }

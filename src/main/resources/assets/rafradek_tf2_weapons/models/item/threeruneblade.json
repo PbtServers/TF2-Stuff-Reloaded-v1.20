@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/threeruneblade",
-		"particle": "rafradek_tf2_weapons:items/threeruneblade"
+		"0": "rafradek_tf2_weapons:item/threeruneblade",
+		"particle": "rafradek_tf2_weapons:item/threeruneblade"
 	},
 	"elements": [
 		{

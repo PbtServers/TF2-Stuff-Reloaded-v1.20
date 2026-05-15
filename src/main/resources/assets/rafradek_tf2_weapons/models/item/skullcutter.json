@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/skullcutter",
-		"particle": "rafradek_tf2_weapons:items/skullcutter"
+		"0": "rafradek_tf2_weapons:item/skullcutter",
+		"particle": "rafradek_tf2_weapons:item/skullcutter"
 	},
 	"elements": [
 		{

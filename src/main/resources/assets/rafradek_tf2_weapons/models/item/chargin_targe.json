@@ -1,7 +1,7 @@
 {
 	"__comment": "Designed by Rafa? with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"mesh_atlas": "rafradek_tf2_weapons:items/chargin_targe"
+		"mesh_atlas": "rafradek_tf2_weapons:item/chargin_targe"
 	},
 	"elements": [
 		{

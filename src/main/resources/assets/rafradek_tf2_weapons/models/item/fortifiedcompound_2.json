@@ -1,6 +1,6 @@
 {
     "parent": "item/bow",
     "textures": {
-        "layer0": "rafradek_tf2_weapons:items/fortifiedcompound_2"
+        "layer0": "rafradek_tf2_weapons:item/fortifiedcompound_2"
     }
 }

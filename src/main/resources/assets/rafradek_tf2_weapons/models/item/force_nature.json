@@ -1,7 +1,7 @@
 {
 	"__comment": "Designed by Rafał with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"texture": "rafradek_tf2_weapons:items/force_nature"
+		"texture": "rafradek_tf2_weapons:item/force_nature"
 	},
 	"elements": [
 		{

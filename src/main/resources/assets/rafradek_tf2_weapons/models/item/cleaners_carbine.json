@@ -1,8 +1,8 @@
 {
 	"credit": "By FaithSDK, Made with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/cleaners_carbine",
-		"particle": "rafradek_tf2_weapons:items/cleaners_carbine"
+		"0": "rafradek_tf2_weapons:item/cleaners_carbine",
+		"particle": "rafradek_tf2_weapons:item/cleaners_carbine"
 	},
 	"elements": [
 		{

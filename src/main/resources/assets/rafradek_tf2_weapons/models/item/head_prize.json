@@ -1,14 +1,14 @@
 {
 	"__comment": "Designed by Rafał with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"head_prize": "rafradek_tf2_weapons:items/head_prize",
-		"head_prize_paint": "rafradek_tf2_weapons:items/head_prize_paint"
+		"head_prize": "rafradek_tf2_weapons:item/head_prize",
+		"head_prize_paint": "rafradek_tf2_weapons:item/head_prize_paint"
 	},
 	"overrides": [
         {
             "predicate": {
-            	"bodyModel":1,
-            	"headModel":0
+            	"body_model":1,
+            	"head_model":0
             },
             "model": "rafradek_tf2_weapons:item/head_prize_body"
 		}

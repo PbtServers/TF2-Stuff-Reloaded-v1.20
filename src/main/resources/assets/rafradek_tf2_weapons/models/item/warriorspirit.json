@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/warriorspirit",
-		"particle": "rafradek_tf2_weapons:items/warriorspirit"
+		"0": "rafradek_tf2_weapons:item/warriorspirit",
+		"particle": "rafradek_tf2_weapons:item/warriorspirit"
 	},
 	"overrides": [
         {

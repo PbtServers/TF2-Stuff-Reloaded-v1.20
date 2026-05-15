@@ -12,7 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import rafradek.tf2weapons.config.ConfigCategory;
 import rafradek.tf2weapons.config.Configuration;
 import rafradek.tf2weapons.config.Property;
-import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.ModList;
 import rafradek.tf2weapons.entity.mercenary.*;
 
 import java.util.ArrayList;
@@ -224,10 +224,10 @@ public class TF2ConfigVars {
 
 		dynamicLights = conf.getBoolean("Dynamic Lights", "modcompatibility", true,
 				"Enables custom light sources for AtomicStryker's Dynamic Lights mod")
-				&& Loader.isModLoaded("dynamiclights");
+				&& ModList.get().isLoaded("dynamiclights");
 		thermalExpansion = conf.getBoolean("Thermal Expansion", "modcompatibility", true,
 				"Adds centrifudge and smelter recipes for smelting ammo, gas acts as a refined fuel container")
-				&& Loader.isModLoaded("thermalexpansion");
+				&& ModList.get().isLoaded("thermalexpansion");
 		dynamicLightsProj = conf.getBoolean("Dynamic Lights - Projectiles", "modcompatibility", true,
 				"Should projectiles emit light");
 		bossReappear = conf.getInt("Boss respawn cooldown", "gameplay", 30000, 1100, Integer.MAX_VALUE,

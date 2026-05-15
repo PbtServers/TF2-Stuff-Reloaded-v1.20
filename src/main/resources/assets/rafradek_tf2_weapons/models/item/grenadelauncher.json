@@ -1,7 +1,7 @@
 {
 	"__comment": "Designed by Rafał with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"atlas": "rafradek_tf2_weapons:items/grenadelauncher"
+		"atlas": "rafradek_tf2_weapons:item/grenadelauncher"
 	},
 	"elements": [
 		{

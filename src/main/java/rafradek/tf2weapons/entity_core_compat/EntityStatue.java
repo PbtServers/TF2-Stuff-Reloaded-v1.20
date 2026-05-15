@@ -1,8 +1,8 @@
 package rafradek.tf2weapons.entity;
 
 import com.mojang.authlib.GameProfile;
-import io.netty.buffer.ByteBuf;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -38,8 +38,8 @@ public class EntityStatue extends Entity implements IEntityAdditionalSpawnData {
 	protected void addAdditionalSaveData(CompoundTag tag) {}
 
 	@Override
-	public void writeSpawnData(ByteBuf buffer) {}
+	public void writeSpawnData(FriendlyByteBuf buffer) {}
 
 	@Override
-	public void readSpawnData(ByteBuf additionalData) {}
+	public void readSpawnData(FriendlyByteBuf additionalData) {}
 }

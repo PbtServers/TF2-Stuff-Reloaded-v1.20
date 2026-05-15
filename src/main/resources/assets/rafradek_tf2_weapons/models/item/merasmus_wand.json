@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "rafradek_tf2_weapons:items/merasmus_wand"
+        "layer0": "rafradek_tf2_weapons:item/merasmus_wand"
     }
 }

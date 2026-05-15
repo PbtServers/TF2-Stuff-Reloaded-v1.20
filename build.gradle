@@ -72,11 +72,17 @@ dependencies {
 }
 
 sourceSets.main.java {
+    // Compatibility stubs must not be packaged under Minecraft/Forge namespaces.
+    // Java 17 modules reject mods that export packages owned by Minecraft/Forge.
+    exclude 'net/minecraft/**'
+    exclude 'net/minecraftforge/**'
+
     // TODO 1.20.1 port: re-enable the legacy client and mixin sources once the
     // server/common layer compiles and the renderer/GUI APIs are migrated.
     exclude 'rafradek/tf2weapons/arena/**'
     exclude 'rafradek/tf2weapons/block/**'
     exclude 'rafradek/tf2weapons/client/**'
+    exclude 'rafradek/tf2weapons/FastProfiler.java'
     exclude 'rafradek/tf2weapons/TF2weapons.java'
     exclude 'rafradek/tf2weapons/TF2EventsCommon.java'
     exclude 'rafradek/tf2weapons/TF2PlayerCapability.java'
@@ -103,11 +109,20 @@ sourceSets.main.java {
     exclude 'rafradek/tf2weapons/item/ItemFromData.java'
     exclude 'rafradek/tf2weapons/item/crafting/**'
     exclude 'rafradek/tf2weapons/jei/**'
+    exclude 'rafradek/tf2weapons/lightsource/**'
     exclude 'rafradek/tf2weapons/loot/**'
     exclude 'rafradek/tf2weapons/message/**'
     exclude 'rafradek/tf2weapons/mixin/**'
+    exclude 'rafradek/tf2weapons/potion/**'
     exclude 'rafradek/tf2weapons/registry/TF2BlockEntities.java'
+    exclude 'rafradek/tf2weapons/ThermalExpansionModule.java'
     exclude 'rafradek/tf2weapons/tileentity/**'
+    exclude 'rafradek/tf2weapons/util/DamageSourceDirect.java'
+    exclude 'rafradek/tf2weapons/util/DamageSourceProjectile.java'
+    exclude 'rafradek/tf2weapons/util/EnumParticleTypes.java'
+    exclude 'rafradek/tf2weapons/util/PlayerPersistStorage.java'
+    exclude 'rafradek/tf2weapons/util/TF2Explosion.java'
+    exclude 'rafradek/tf2weapons/util/TF2Util.java'
     exclude 'rafradek/tf2weapons/util/WeaponData.java'
 }
 

@@ -1,6 +1,6 @@
 {
 	"parent": "rafradek_tf2_weapons:item/gunslinger",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/gunslinger_blu"
+		"0": "rafradek_tf2_weapons:item/gunslinger_blu"
 	}
 }

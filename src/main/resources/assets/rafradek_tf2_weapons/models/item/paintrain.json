@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/paintrain",
-		"particle": "rafradek_tf2_weapons:items/paintrain"
+		"0": "rafradek_tf2_weapons:item/paintrain",
+		"particle": "rafradek_tf2_weapons:item/paintrain"
 	},
 	"elements": [
 		{

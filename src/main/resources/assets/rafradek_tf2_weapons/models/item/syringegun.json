@@ -1,8 +1,8 @@
 {
 	"credit": "By FaithSDK, Made with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/syringegun",
-		"particle": "rafradek_tf2_weapons:items/syringegun"
+		"0": "rafradek_tf2_weapons:item/syringegun",
+		"particle": "rafradek_tf2_weapons:item/syringegun"
 	},
 	"overrides": [
         {

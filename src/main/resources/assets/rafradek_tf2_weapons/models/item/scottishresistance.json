@@ -1,8 +1,8 @@
 {
 	"credit": "By FaithSDK, Made with Blockbench",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/scottishresistance",
-		"particle": "rafradek_tf2_weapons:items/scottishresistance"
+		"0": "rafradek_tf2_weapons:item/scottishresistance",
+		"particle": "rafradek_tf2_weapons:item/scottishresistance"
 	},
 	"elements": [
 		{

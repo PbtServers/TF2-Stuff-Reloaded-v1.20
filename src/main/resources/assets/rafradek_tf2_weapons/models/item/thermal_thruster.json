@@ -2,7 +2,7 @@
 	"__comment": "Designed by Rafał with Cubik Studio - https://cubik.studio",
 	"parent": "block/block",
 	"textures": {
-		"thermal_thruster": "rafradek_tf2_weapons:items/thermal_thruster"
+		"thermal_thruster": "rafradek_tf2_weapons:item/thermal_thruster"
 	},
 	"overrides": [
         {

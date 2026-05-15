@@ -2,7 +2,7 @@
 	"__comment": "Designed by Rafał with Cubik Studio - https://cubik.studio",
 	"parent": "block/block",
 	"textures": {
-		"buffbanner_body_active": "rafradek_tf2_weapons:items/buffbanner_body_active"
+		"buffbanner_body_active": "rafradek_tf2_weapons:item/buffbanner_body_active"
 	},
 	"elements": [ 	 
 		{

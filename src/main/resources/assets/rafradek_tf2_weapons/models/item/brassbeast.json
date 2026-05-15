@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench, Original Minigun model by FaithSDK",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/brassbeast",
-		"particle": "rafradek_tf2_weapons:items/brassbeast"
+		"0": "rafradek_tf2_weapons:item/brassbeast",
+		"particle": "rafradek_tf2_weapons:item/brassbeast"
 	},
 	"elements": [
 		{

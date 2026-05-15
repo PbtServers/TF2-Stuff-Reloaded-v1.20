@@ -6,10 +6,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.google.gson.JsonParseException;
 
 import net.minecraft.core.Direction;
@@ -18,6 +21,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.LazyOptional;
+import rafradek.tf2weapons.common.MapList;
 import rafradek.tf2weapons.item.ItemFromData;
 
 public class WeaponData implements ICapabilityProvider {
@@ -66,7 +70,19 @@ public class WeaponData implements ICapabilityProvider {
 		return properties.containsKey(property);
 	}
 
-	public void addProperty(String name, JsonElement element, JsonDeserializationContext context) {}
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public void addProperty(String name, JsonElement element, JsonDeserializationContext context) {
+		PropertyType type = MapList.propertyTypes == null ? null : MapList.propertyTypes.get(name);
+		if (type != null) {
+			Object value = type.deserialize(element, null, context);
+			if (value != null) {
+				this.properties.put(type, value);
+				if (value instanceof rafradek.tf2weapons.item.ItemCrate.CrateContent content) {
+					this.maxCrateValue = content.maxCrateValue;
+				}
+			}
+		}
+	}
 
 	public String getName() {
 		return name;
@@ -77,7 +93,23 @@ public class WeaponData implements ICapabilityProvider {
 	}
 
 	public static ArrayList<WeaponData> parseFile(String fileData, String filename) {
-		return new ArrayList<>();
+		ArrayList<WeaponData> weapons = new ArrayList<>();
+		JsonElement root = JsonParser.parseString(fileData);
+		if (!root.isJsonObject()) {
+			return weapons;
+		}
+		for (Entry<String, JsonElement> entry : root.getAsJsonObject().entrySet()) {
+			if (!entry.getValue().isJsonObject()) {
+				continue;
+			}
+			WeaponData data = new WeaponData(entry.getKey());
+			JsonObject object = entry.getValue().getAsJsonObject();
+			for (Entry<String, JsonElement> property : object.entrySet()) {
+				data.addProperty(property.getKey(), property.getValue(), null);
+			}
+			weapons.add(data);
+		}
+		return weapons;
 	}
 
 	@Override

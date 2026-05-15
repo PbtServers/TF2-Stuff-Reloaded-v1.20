@@ -1,8 +1,8 @@
 {
 	"credit": "Made by dsaf with Blockbench, Original Revolver model by FaithSDK",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/diamondback",
-		"particle": "rafradek_tf2_weapons:items/diamondback"
+		"0": "rafradek_tf2_weapons:item/diamondback",
+		"particle": "rafradek_tf2_weapons:item/diamondback"
 	},
 	"elements": [
 		{

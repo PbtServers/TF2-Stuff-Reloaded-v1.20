@@ -1,7 +1,7 @@
 {
 	"__comment": "Designed by Rafał with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"ammo_box": "rafradek_tf2_weapons:items/ammo_box"
+		"ammo_box": "rafradek_tf2_weapons:item/ammo_box"
 	},
 	"elements": [ 	 
 		{

@@ -1,7 +1,7 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "rafradek_tf2_weapons:items/breadbite"
+        "layer0": "rafradek_tf2_weapons:item/breadbite"
     },
     "display": {
         "thirdperson_righthand": {

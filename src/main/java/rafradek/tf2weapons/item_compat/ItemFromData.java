@@ -115,15 +115,32 @@ public class ItemFromData extends Item implements IItemOverlay {
 	}
 
 	public static WeaponData getData(ItemStack stack) {
+		if (!stack.isEmpty() && stack.hasTag() && MapList.nameToData != null) {
+			String type = stack.getTag().getString("Type");
+			WeaponData data = MapList.nameToData.get(type);
+			if (data != null) {
+				return data;
+			}
+		}
 		return BLANK_DATA;
 	}
 
 	public static ItemStack getNewStack(String type) {
-		return new ItemStack(TF2weapons.itemTF2 == null ? Items.AIR : TF2weapons.itemTF2);
+		WeaponData data = MapList.nameToData == null ? null : MapList.nameToData.get(type);
+		return getNewStack(data == null ? new WeaponData(type) : data);
 	}
 
 	public static ItemStack getNewStack(WeaponData type) {
-		return getNewStack(type == null ? "" : type.getName());
+		if (type == null) {
+			return ItemStack.EMPTY;
+		}
+		Item item = MapList.weaponClasses == null ? null : MapList.weaponClasses.get(type.getString(PropertyType.CLASS));
+		if (item == null) {
+			item = TF2weapons.itemTF2 == null ? Items.AIR : TF2weapons.itemTF2;
+		}
+		ItemStack stack = new ItemStack(item);
+		stack.getOrCreateTag().putString("Type", type.getName());
+		return stack;
 	}
 
 	@Override
@@ -174,11 +191,21 @@ public class ItemFromData extends Item implements IItemOverlay {
 	}
 
 	public static int getWeaponCount(Predicate<WeaponData> predicate) {
-		return 0;
+		if (MapList.nameToData == null) {
+			return 0;
+		}
+		int count = 0;
+		for (WeaponData data : MapList.nameToData.values()) {
+			if (predicate == null || predicate.apply(data)) {
+				count++;
+			}
+		}
+		return count;
 	}
 
 	public static boolean isSameType(ItemStack stack, String name) {
-		return false;
+		WeaponData data = getData(stack);
+		return data != BLANK_DATA && (data.getName().equals(name) || data.getString(PropertyType.BASED_ON).equals(name));
 	}
 
 	public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
@@ -194,7 +221,11 @@ public class ItemFromData extends Item implements IItemOverlay {
 	}
 
 	public static int getSlotForClass(WeaponData data, TF2Class clazz) {
-		return -1;
+		if (data == null || clazz == null) {
+			return -1;
+		}
+		Integer slot = data.get(PropertyType.SLOT).get(clazz.getName());
+		return slot == null ? -1 : slot;
 	}
 
 	public static int getSlotForClass(WeaponData data, EntityTF2Character entity) {

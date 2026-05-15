@@ -1,7 +1,7 @@
 {
 	"credit": "Made by dsaf with Blockbench, Original model by Rafal",
 	"textures": {
-		"atlas": "rafradek_tf2_weapons:items/cloak2"
+		"atlas": "rafradek_tf2_weapons:item/cloak2"
 	},
 	"elements": [
 		{

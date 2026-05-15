@@ -1,8 +1,8 @@
 {
     "parent": "rafradek_tf2_weapons:item/hat",
     "textures": {
-        "0": "rafradek_tf2_weapons:items/anvil_base",
-        "1": "rafradek_tf2_weapons:items/concrete_powder_orange"
+        "0": "rafradek_tf2_weapons:item/anvil_base",
+        "1": "rafradek_tf2_weapons:item/concrete_powder_orange"
     },
     "elements": [
         {

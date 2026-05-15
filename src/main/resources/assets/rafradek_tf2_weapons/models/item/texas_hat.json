@@ -1,7 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"texas_hat": "rafradek_tf2_weapons:items/texas_hat"
+		"texas_hat": "rafradek_tf2_weapons:item/texas_hat"
 	},
 	"elements": [
 		{

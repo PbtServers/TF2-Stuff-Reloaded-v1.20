@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "rafradek_tf2_weapons:items/mad_milk"
+        "layer0": "rafradek_tf2_weapons:item/mad_milk"
     },
     "overrides": [
         {

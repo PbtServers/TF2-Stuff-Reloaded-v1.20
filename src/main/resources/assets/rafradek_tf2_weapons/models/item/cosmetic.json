@@ -1,7 +1,7 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "rafradek_tf2_weapons:items/knife"
+        "layer0": "rafradek_tf2_weapons:item/knife"
     },
     "overrides": [
         {

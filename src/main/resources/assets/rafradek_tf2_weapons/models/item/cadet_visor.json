@@ -2,9 +2,9 @@
 	"credit": "Made with Blockbench",
 	"parent": "rafradek_tf2_weapons:item/hat",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/bone_block_side",
-		"1": "rafradek_tf2_weapons:items/mushroom_block_skin_red",
-		"2": "rafradek_tf2_weapons:items/glass_orange"
+		"0": "rafradek_tf2_weapons:item/bone_block_side",
+		"1": "rafradek_tf2_weapons:item/mushroom_block_skin_red",
+		"2": "rafradek_tf2_weapons:item/glass_orange"
 	},
 	"elements": [
 		{

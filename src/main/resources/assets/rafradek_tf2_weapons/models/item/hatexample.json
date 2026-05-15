@@ -1,7 +1,7 @@
 {
     "parent": "rafradek_tf2_weapons:item/hat",
     "textures": {
-        "0": "rafradek_tf2_weapons:items/image"
+        "0": "rafradek_tf2_weapons:item/image"
     },
     "elements": [
         {

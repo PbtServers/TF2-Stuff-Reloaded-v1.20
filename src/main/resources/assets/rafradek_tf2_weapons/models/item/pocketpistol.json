@@ -1,8 +1,8 @@
 {
 	"credit": "Made by 스파이와 피자한조각#9717 with Blockbench, Original Pistol model by FaithSDK",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/pocketpistol",
-		"particle": "rafradek_tf2_weapons:items/pocketpistol"
+		"0": "rafradek_tf2_weapons:item/pocketpistol",
+		"particle": "rafradek_tf2_weapons:item/pocketpistol"
 	},
 	"elements": [
 		{

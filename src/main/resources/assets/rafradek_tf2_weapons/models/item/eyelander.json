@@ -2,7 +2,7 @@
 	"parent": "item/handheld",
 	"textures": 
 	{
-		"layer0": "rafradek_tf2_weapons:items/eyelander"
+		"layer0": "rafradek_tf2_weapons:item/eyelander"
 	},
     "display": {
         "thirdperson_righthand": {

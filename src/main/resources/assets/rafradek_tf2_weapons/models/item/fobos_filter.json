@@ -1,8 +1,8 @@
 {
 	"parent": "rafradek_tf2_weapons:item/hat",
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/phobos_filter",
-		"particle": "rafradek_tf2_weapons:items/phobos_filter"
+		"0": "rafradek_tf2_weapons:item/phobos_filter",
+		"particle": "rafradek_tf2_weapons:item/phobos_filter"
 	},
 	"elements": [
 		{

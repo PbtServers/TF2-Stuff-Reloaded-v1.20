@@ -2,8 +2,8 @@
 	"credit": "Made by dsaf with Blockbench",
 	"texture_size": [28, 28],
 	"textures": {
-		"0": "rafradek_tf2_weapons:items/hothand",
-		"particle": "rafradek_tf2_weapons:items/hothand"
+		"0": "rafradek_tf2_weapons:item/hothand",
+		"particle": "rafradek_tf2_weapons:item/hothand"
 	},
 	"elements": [
 		{
