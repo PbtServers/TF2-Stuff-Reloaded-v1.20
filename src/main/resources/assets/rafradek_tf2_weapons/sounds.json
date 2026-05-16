@@ -2704,6 +2704,24 @@
 			"rafradek_tf2_weapons:weapon/grappling_hook_reel_start"
 		]
 	},
+	"weapon_shoot": {
+		"category": "neutral",
+		"sounds": [
+			"rafradek_tf2_weapons:weapon/shotgun_shoot"
+		]
+	},
+	"weapon_reload": {
+		"category": "neutral",
+		"sounds": [
+			"rafradek_tf2_weapons:weapon/shotgun_reload"
+		]
+	},
+	"weapon_no_ammo": {
+		"category": "neutral",
+		"sounds": [
+			"rafradek_tf2_weapons:weapon/sniper_railgun_no_fire"
+		]
+	},
 	"weapon.reload.pomson": {
 		"category": "neutral",
 		"sounds": [
