@@ -50,7 +50,7 @@
                     "functions": [
                         {
                             "function": "set_nbt",
-                            "tag": '{class:pyro}'
+                            "tag": "{class:pyro}"
                         }
                     ]
                 }

@@ -47,7 +47,8 @@ minecraft {
 
 mixin {
     add sourceSets.main, "mixins.tf2stuff-reloaded.refmap.json"
-    config "mixins.tf2stuff-reloaded.json"
+    // The historical config references classes excluded below. Register it
+    // again only after those mixins have been migrated and packaged.
 }
 
 repositories {

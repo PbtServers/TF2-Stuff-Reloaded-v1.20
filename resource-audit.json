@@ -1,0 +1,40 @@
+{
+  "catalog_entries": {
+    "cosmetics": 18,
+    "crates": 10,
+    "weapons": 188
+  },
+  "weapon_classes": {
+    "airblast": 1,
+    "backpack": 3,
+    "backpackgeneric": 3,
+    "bonk": 2,
+    "bullet": 30,
+    "cleaver": 1,
+    "cloak": 4,
+    "flamethrower": 3,
+    "gas": 1,
+    "grapplinghook": 1,
+    "huntsman": 2,
+    "jar": 4,
+    "jetpack": 1,
+    "jetpacktrigger": 1,
+    "knife": 5,
+    "medigun": 4,
+    "melee": 49,
+    "minigun": 8,
+    "parachute": 1,
+    "pda": 1,
+    "projectile": 38,
+    "sapper": 3,
+    "shield": 2,
+    "sniperrifle": 8,
+    "stickybomb": 4,
+    "wrangler": 2,
+    "wrench": 6
+  },
+  "missing_direct_weapon_models": [],
+  "invalid_asset_json": [],
+  "missing_local_model_references": [],
+  "scope": "Static inventory only; does not prove runtime loading, inherited model resolution or gameplay."
+}

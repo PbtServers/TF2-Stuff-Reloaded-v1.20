@@ -1,6 +1,8 @@
 package rafradek.tf2weapons.item.base;
 
 import java.util.List;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import javax.annotation.Nullable;
 
@@ -46,6 +48,10 @@ public class TF2WeaponItem extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
+
+        if (player.getCooldowns().isOnCooldown(this)) {
+            return InteractionResultHolder.fail(stack);
+        }
 
         if (!level.isClientSide) {
             initializeAmmoIfNeeded(stack);
@@ -150,11 +156,12 @@ public class TF2WeaponItem extends Item {
     }
 
     private int getAmmo(ItemStack stack) {
-        return stack.getOrCreateTag().getInt(AMMO_KEY);
+        CompoundTag tag = stack.getTag();
+        return tag == null ? 0 : Math.max(0, Math.min(stats.getMaxAmmo(), tag.getInt(AMMO_KEY)));
     }
 
     private void setAmmo(ItemStack stack, int ammo) {
-        stack.getOrCreateTag().putInt(AMMO_KEY, Math.max(ammo, 0));
+        stack.getOrCreateTag().putInt(AMMO_KEY, Math.max(0, Math.min(stats.getMaxAmmo(), ammo)));
     }
 
     private boolean hasAmmoInitialized(ItemStack stack) {
@@ -163,7 +170,8 @@ public class TF2WeaponItem extends Item {
     }
 
     private boolean isReloading(ItemStack stack) {
-        return stack.getOrCreateTag().getBoolean(RELOADING_KEY);
+        CompoundTag tag = stack.getTag();
+        return tag != null && tag.getBoolean(RELOADING_KEY);
     }
 
     private void setReloading(ItemStack stack, boolean reloading) {
@@ -174,7 +182,8 @@ public class TF2WeaponItem extends Item {
     }
 
     private int getReloadTicks(ItemStack stack) {
-        return stack.getOrCreateTag().getInt(RELOAD_TICKS_KEY);
+        CompoundTag tag = stack.getTag();
+        return tag == null ? 0 : Math.max(0, Math.min(stats.getReloadTicks(), tag.getInt(RELOAD_TICKS_KEY)));
     }
 
     private void setReloadTicks(ItemStack stack, int ticks) {
@@ -198,25 +207,30 @@ public class TF2WeaponItem extends Item {
 
         Vec3 lookDirection = player.getLookAngle().normalize();
         int pelletCount = Math.max(1, stats.getPelletCount());
+        Map<LivingEntity, Integer> hits = new LinkedHashMap<>();
 
         for (int i = 0; i < pelletCount; i++) {
             Vec3 pelletDirection = applySpread(player, lookDirection);
-            performHitscanPellet(level, player, pelletDirection);
+            LivingEntity target = findHitscanPelletTarget(level, player, pelletDirection);
+            if (target != null) {
+                hits.merge(target, 1, Integer::sum);
+            }
         }
+        // Apply the whole shot once per target: vanilla hurt immunity otherwise
+        // discards subsequent pellets with the same damage in this tick.
+        hits.forEach((target, count) -> target.hurt(player.damageSources().playerAttack(player),
+                (float) (stats.getDamage() * count)));
     }
 
-    private void performHitscanPellet(Level level, Player player, Vec3 direction) {
+    @Nullable
+    private LivingEntity findHitscanPelletTarget(Level level, Player player, Vec3 direction) {
         Vec3 start = player.getEyePosition();
         Vec3 end = start.add(direction.scale(stats.getRange()));
         BlockHitResult blockHitResult = level.clip(new ClipContext(start, end, ClipContext.Block.COLLIDER,
                 ClipContext.Fluid.NONE, player));
         Vec3 clippedEnd = blockHitResult.getType() == HitResult.Type.MISS ? end : blockHitResult.getLocation();
         AABB searchBox = new AABB(start, clippedEnd).inflate(1.0D);
-        LivingEntity target = findHitscanTarget(level, player, start, clippedEnd, searchBox);
-
-        if (target != null) {
-            target.hurt(player.damageSources().playerAttack(player), (float) stats.getDamage());
-        }
+        return findHitscanTarget(level, player, start, clippedEnd, searchBox);
     }
 
     private Vec3 applySpread(Player player, Vec3 lookDirection) {
@@ -238,9 +252,10 @@ public class TF2WeaponItem extends Item {
         double closestDistanceSqr = start.distanceToSqr(end);
 
         for (LivingEntity candidate : level.getEntitiesOfClass(LivingEntity.class, searchBox,
-                entity -> entity != player && entity.isAlive() && entity.isPickable())) {
+                entity -> entity != player && entity.isAlive() && !entity.isSpectator() && entity.isPickable())) {
             AABB candidateBox = candidate.getBoundingBox().inflate(candidate.getPickRadius());
-            java.util.Optional<Vec3> hitLocation = candidateBox.clip(start, end);
+            java.util.Optional<Vec3> hitLocation = candidateBox.contains(start)
+                    ? java.util.Optional.of(start) : candidateBox.clip(start, end);
             if (hitLocation.isEmpty()) {
                 continue;
             }
