@@ -28,7 +28,7 @@ public final class TF2Items {
     public static final Map<String, RegistryObject<Item>> AMMO = registerAmmo();
 
     private static Map<String, RegistryObject<Item>> registerAmmo() {
-        String[] names = {"shotgun", "minigun", "pistol", "revolver", "smg", "sniper", "rocket", "grenade", "syringe", "fire", "sticky", "medigun"};
+        String[] names = {"shotgun", "minigun", "pistol", "revolver", "smg", "sniper", "rocket", "grenade", "syringe", "fire", "sticky", "medigun", "flare", "ball"};
         Map<String, RegistryObject<Item>> result = new LinkedHashMap<>();
         for (int i = 0; i < names.length; i++) {
             int type = i + 1;

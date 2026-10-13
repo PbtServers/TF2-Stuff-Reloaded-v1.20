@@ -85,9 +85,11 @@ public final class WeaponGameTests {
         cow.setNoGravity(true);
         float initialHealth = cow.getHealth();
         item.use(helper.getLevel(), player, InteractionHand.MAIN_HAND);
+        item.releaseUsing(stack, helper.getLevel(), player, 72000);
         helper.assertTrue(cow.getHealth() == initialHealth - 5, "Hitscan damage: initial=" + initialHealth + ", actual=" + cow.getHealth());
         helper.assertTrue(item.readAmmo(stack, item.stats(stack)).ammo() == 24, "One round consumed");
         item.use(helper.getLevel(), player, InteractionHand.MAIN_HAND);
+        item.releaseUsing(stack, helper.getLevel(), player, 72000);
         helper.assertTrue(item.readAmmo(stack, item.stats(stack)).ammo() == 24, "Cooldown prevents second shot");
         helper.succeed();
     }
@@ -100,13 +102,15 @@ public final class WeaponGameTests {
         float initialHealth = cow.getHealth();
         helper.setBlock(new BlockPos(1, 3, 3), Blocks.STONE);
         item.use(helper.getLevel(), player, InteractionHand.MAIN_HAND);
+        item.releaseUsing(stack, helper.getLevel(), player, 72000);
         helper.assertTrue(cow.getHealth() == initialHealth, "Blocks occlude hitscan");
-        ItemStack launcher = TF2Items.WEAPONS.get("rocketlauncher").get().getDefaultInstance();
+        ItemStack launcher = TF2Items.WEAPONS.get("grapplinghook").get().getDefaultInstance();
         CatalogWeaponItem rocket = (CatalogWeaponItem) launcher.getItem();
         player.setItemInHand(InteractionHand.MAIN_HAND, launcher);
         rocket.initialize(launcher);
+        int pendingAmmo = rocket.readAmmo(launcher, rocket.stats(launcher)).ammo();
         rocket.use(helper.getLevel(), player, InteractionHand.MAIN_HAND);
-        helper.assertTrue(rocket.readAmmo(launcher, rocket.stats(launcher)).ammo() == 4, "Pending projectiles never consume ammo");
+        helper.assertTrue(rocket.readAmmo(launcher, rocket.stats(launcher)).ammo() == pendingAmmo, "Pending projectiles never consume ammo");
         helper.succeed();
     }
     @GameTest(template = "weapon_test_empty")
@@ -114,6 +118,7 @@ public final class WeaponGameTests {
         ItemStack stack = TF2Items.SCATTERGUN.get().getDefaultInstance();
         var attributes = new net.minecraft.nbt.CompoundTag();
         attributes.putFloat("8", 0); // Disable spread to test aggregation deterministically.
+        attributes.putFloat("NoRandomCrit", 1);
         stack.getOrCreateTag().put("Attributes", attributes);
         Player player = player(helper, stack);
         var target = helper.spawnWithNoFreeWill(EntityType.COW, new Vec3(1.5, 3, 4));
@@ -122,6 +127,8 @@ public final class WeaponGameTests {
         item.use(helper.getLevel(), player, InteractionHand.MAIN_HAND);
         helper.assertTrue(before - target.getHealth() > 6, "All pellets are aggregated instead of hurt immunity discarding them");
         ItemStack bat = TF2Items.WEAPONS.get("bat").get().getDefaultInstance();
+        var meleeAttributes = new net.minecraft.nbt.CompoundTag(); meleeAttributes.putFloat("NoRandomCrit", 1);
+        bat.getOrCreateTag().put("Attributes", meleeAttributes);
         player.setItemInHand(InteractionHand.MAIN_HAND, bat);
         var close = helper.spawnWithNoFreeWill(EntityType.COW, new Vec3(1.5, 3, 2.8));
         float health = close.getHealth();

@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "rafradek_tf2_weapons:bullet",
+    "rafradek_tf2_weapons:bullet_piercing",
+    "rafradek_tf2_weapons:projectile",
+    "rafradek_tf2_weapons:projectile_piercing",
+    "rafradek_tf2_weapons:explosion",
+    "rafradek_tf2_weapons:explosion_piercing",
+    "rafradek_tf2_weapons:melee",
+    "rafradek_tf2_weapons:melee_piercing",
+    "rafradek_tf2_weapons:afterburn",
+    "rafradek_tf2_weapons:afterburn_piercing",
+    "rafradek_tf2_weapons:flare",
+    "rafradek_tf2_weapons:flare_piercing"
+  ]
+}

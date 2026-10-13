@@ -32,3 +32,6 @@ __pycache__/
 gametest-run.log
 client-validation.log
 build-validation.log
+combat-build.log
+combat-tests.log
+combat-client.log

@@ -30,10 +30,16 @@ public final class WeaponModels {
         ResourceLocation id = new ResourceLocation(render);
         return new ResourceLocation(id.getNamespace(), "item/" + id.getPath());
     }
+    private static ResourceLocation backstabModel(WeaponDefinition data) {
+        String render = data.text("Render backstab", "");
+        if (render.equals("rafradek_tf2_weapons:knifebackstab")) render = "rafradek_tf2_weapons:knife_backstab";
+        return render.isEmpty() ? null : model(render);
+    }
     @SubscribeEvent
     public static void register(ModelEvent.RegisterAdditional event) {
         event.register(PROVISIONAL);
         WeaponCatalog.get().all().forEach(data -> event.register(model(data.render())));
+        WeaponCatalog.get().all().forEach(data -> { if (backstabModel(data) != null) event.register(backstabModel(data)); });
     }
     @SubscribeEvent
     public static void bake(ModelEvent.ModifyBakingResult event) {
@@ -42,10 +48,12 @@ public final class WeaponModels {
         BakedModel provisional = Objects.requireNonNull(baked.get(PROVISIONAL), "Missing provisional weapon model");
         for (WeaponDefinition data : WeaponCatalog.get().all()) weapons.put(data.id(), baked.getOrDefault(model(data.render()), provisional));
         Map<String, BakedModel> resolved = Map.copyOf(weapons);
+        Map<String, BakedModel> backstabs = new HashMap<>();
+        WeaponCatalog.get().all().forEach(data -> { if (backstabModel(data) != null) backstabs.put(data.id(), baked.getOrDefault(backstabModel(data), weapons.get(data.id()))); });
         TF2Items.allWeaponItems().forEach(item -> {
             ResourceLocation id = item.getId();
             BakedModel base = resolved.getOrDefault(id.getPath(), provisional);
-            baked.put(new ModelResourceLocation(id, "inventory"), new RoutedModel(base, resolved, provisional));
+            baked.put(new ModelResourceLocation(id, "inventory"), new RoutedModel(base, resolved, Map.copyOf(backstabs), provisional));
         });
         if (Boolean.getBoolean("tf2weapons.validateModels")) validate(baked, resolved, provisional);
     }
@@ -59,12 +67,14 @@ public final class WeaponModels {
             if (!data.render().endsWith(":weapon_unavailable")) originals++;
             // Verify both the individual registry item and a historical Type carrier.
             ItemStack stack = TF2Items.WEAPONS.get(data.id()).get().getDefaultInstance();
+            BakedModel animated = selected.getOverrides().resolve(selected, stack, null, null, 0);
+            BakedModel expected = animated == null ? selected : animated;
             BakedModel routed = baked.get(new ModelResourceLocation(TF2Items.WEAPONS.get(data.id()).getId(), "inventory"));
-            if (routed.getOverrides().resolve(routed, stack, null, null, 0) != selected)
+            if (routed.getOverrides().resolve(routed, stack, null, null, 0) != expected)
                 throw new IllegalStateException("Wrong individual model: " + data.id());
             ItemStack legacy = new ItemStack(carrier.get());
             legacy.getOrCreateTag().putString("Type", data.id());
-            if (routedCarrier.getOverrides().resolve(routedCarrier, legacy, null, null, 0) != selected)
+            if (routedCarrier.getOverrides().resolve(routedCarrier, legacy, null, null, 0) != expected)
                 throw new IllegalStateException("Wrong Type model: " + data.id());
             List<net.minecraft.client.renderer.block.model.BakedQuad> quads = new ArrayList<>(selected.getQuads(null, null, RandomSource.create(0)));
             for (Direction direction : Direction.values()) quads.addAll(selected.getQuads(null, direction, RandomSource.create(0)));
@@ -82,7 +92,7 @@ public final class WeaponModels {
     }
     private static final class RoutedModel extends BakedModelWrapper<BakedModel> {
         private final ItemOverrides overrides;
-        RoutedModel(BakedModel base, Map<String, BakedModel> models, BakedModel provisional) {
+        RoutedModel(BakedModel base, Map<String, BakedModel> models, Map<String, BakedModel> backstabs, BakedModel provisional) {
             super(base);
             overrides = new ItemOverrides() {
                 @Override
@@ -91,6 +101,7 @@ public final class WeaponModels {
                     if (!(stack.getItem() instanceof CatalogWeaponItem item)) return original;
                     WeaponDefinition data = item.definition(stack);
                     BakedModel selected = data == null ? provisional : models.getOrDefault(data.id(), provisional);
+                    if (data != null && CombatClient.backstabReady(stack, entity)) selected = backstabs.getOrDefault(data.id(), selected);
                     BakedModel animated = selected.getOverrides().resolve(selected, stack, level, entity, seed);
                     return animated == null ? selected : animated;
                 }

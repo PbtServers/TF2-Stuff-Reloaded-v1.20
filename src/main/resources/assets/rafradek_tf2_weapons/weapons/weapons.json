@@ -2406,6 +2406,7 @@
 		"Class": "knife",
 		"Based on": "butterflyknife",
 		"Render": "rafradek_tf2_weapons:eternalreward",
+		"Render backstab": "rafradek_tf2_weapons:eternalrewardbackstab",
 		"Stock": false,
 		"Cost": 36,
 		"Knockback": 0,
@@ -3515,6 +3516,7 @@
 		"Based on": "butterflyknife",
 		"Cost": 20,
 		"Render": "rafradek_tf2_weapons:sharpdresser",
+		"Render backstab": "rafradek_tf2_weapons:sharpdresserbackstab",
 		"Stock": false,
 		"Description": "Every merc's crazy for a sharp-dressed\nman. With 15th century murder-knives\nextruding from his cufflinks."
 	},
@@ -3552,7 +3554,8 @@
 		"Name": "Wanga Prick",
 		"Class": "knife",
 		"Based on": "eternalreward",
-		"Render": "rafradek_tf2_weapons:wangaprick"
+		"Render": "rafradek_tf2_weapons:wangaprick",
+		"Render backstab": "rafradek_tf2_weapons:wangaprickbackstab"
 	},
 	"quackenbirdt": {
 		"Name": "Quäckenbirdt",

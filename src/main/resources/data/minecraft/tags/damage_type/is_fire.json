@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "rafradek_tf2_weapons:afterburn",
+    "rafradek_tf2_weapons:afterburn_piercing",
+    "rafradek_tf2_weapons:flare",
+    "rafradek_tf2_weapons:flare_piercing"
+  ]
+}

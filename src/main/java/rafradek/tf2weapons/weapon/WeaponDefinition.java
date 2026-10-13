@@ -56,5 +56,13 @@ public final class WeaponDefinition {
             "DamageBonus", "DamagePenalty", "ClipSizeBonus", "ClipSizePenalty", "FireRateBonus", "FireRatePenalty",
             "SpreadBonus", "SpreadPenalty", "SpreadAdd", "PelletBonus", "PelletPenalty", "ReloadRateBonus", "ReloadRatePenalty",
             "AmmoEfficiencyBonus", "AmmoEfficiencyPenalty", "RangeIncrease", "BurnOnHit",
-            "HealthOnHit", "HealthOnKill", "DamageBurnBonus", "DamageNonBurnPenalty", "DamagePlayerPenalty");
+            "HealthOnHit", "HealthOnKill", "DamageBurnBonus", "DamageNonBurnPenalty", "DamagePlayerPenalty",
+            "NoRandomCrit", "CritBurning", "CritMini", "MiniCritBurning", "MinicritAirborne", "CritsBecomeMiniCrits",
+            "NoHeadshot", "Headshot", "NoBackstab", "DamageBonusCharged", "ChargeBonus", "ChargePenalty", "NeedScope",
+            "MinigunSpinBonus", "MinigunSpinPenalty", "ProjectileSpeedBonus", "ProjectileSpeedPenalty",
+            "ExplosionRadiusBonus", "ExplosionRadiusPenalty", "FuseTimeBonus", "StickybombBonus", "StickybombPenalty",
+            "ArmTimePenalty", "StickyControl", "DetonateFlare", "DestroyOnImpact", "Penetration", "BleedingDuration",
+            "SelfDamageReduced", "SelfDamageIncreased", "SelfPushForceBonus", "SelfPushForcePenalty",
+            "KnockbackBonus", "KnockbackPenalty", "DamageResistBonus", "DamageResistPenalty", "ExplosionResistBonus",
+            "MeleeResistBonus", "RangedResistBonus", "FireResistBonus", "Unblockable", "MarkForDeath");
 }

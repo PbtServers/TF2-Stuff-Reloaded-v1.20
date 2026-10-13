@@ -18,6 +18,10 @@ public final class TF2Sounds {
 
     static {
         java.util.Set<String> paths = new java.util.TreeSet<>();
+        try (var stream = java.util.Objects.requireNonNull(TF2Sounds.class.getResourceAsStream("/assets/rafradek_tf2_weapons/sounds.json"));
+                var reader = new java.io.InputStreamReader(stream, java.nio.charset.StandardCharsets.UTF_8)) {
+            paths.addAll(com.google.gson.JsonParser.parseReader(reader).getAsJsonObject().keySet());
+        } catch (java.io.IOException error) { throw new IllegalStateException("Cannot load original sound events", error); }
         for (var weapon : rafradek.tf2weapons.weapon.WeaponCatalog.get().all()) {
             weapon.rawData().entrySet().stream().filter(e -> e.getKey().endsWith("sound"))
                     .map(e -> ResourceLocation.tryParse(e.getValue().getAsString()))

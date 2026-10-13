@@ -19,6 +19,9 @@ public final class TF2StuffReloaded {
         TF2Blocks.register(modEventBus);
         TF2Sounds.register(modEventBus);
         TF2EntityTypes.register(modEventBus);
+        rafradek.tf2weapons.registry.TF2Effects.register(modEventBus);
+        rafradek.tf2weapons.weapon.projectile.ModernProjectiles.register();
+        rafradek.tf2weapons.weapon.CombatControls.register();
         TF2CreativeTabs.register(modEventBus);
     }
 }
