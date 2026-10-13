@@ -1,4 +1,145 @@
-# Estado del port a 1.20.1 — 13 de octubre de 2026
+# Estado del port a 1.20.1 — catálogo moderno, 13 de octubre de 2026
+
+## Entrega actual sobre 700cc11
+
+Rama: `development/weapon-foundation-1.20.1`. Esta sección sustituye el estado
+de registros y armas de la primera entrega, conservado más abajo como historial.
+
+| Estado | Número exacto | Alcance |
+| --- | ---: | --- |
+| Definiciones cargadas y registros individuales de armas | 188 | Todos los IDs de weapons.json, incluidas entradas internas/ocultas |
+| Portadores históricos adicionales | 14 | IDs de Class que no colisionan con los 188; admiten NBT Type |
+| Suministros de munición | 12 | IDs ammo_* y tipos de munición originales |
+| Armas con ruta a recursos originales | 184 | Modelos y caras comprobados automáticamente en el cliente |
+| Armas con modelo provisional explícito | 4 | meleebase, mnceye, mnceyeang, explodeonignite |
+| Armas con combate básico parcial | 101 | 41 hitscan y 60 melee; no equivalen a mecánicas originales completas |
+| Armas con comportamiento pendiente | 87 | Proyectiles, objetos especiales y economía de metal, entre otros |
+| Armas completamente migradas | 0 | Faltan críticos, equipos y mecánicas específicas/transversales |
+
+El registro de ítems comprende 217 entradas del mod: 188 armas + 14 portadores
++ 12 municiones + los 3 metales previos. No se duplicó Scattergun. Los números
+de combate incluyen entradas internas, como meleebase y munición de Sentry;
+no son un recuento de 101 armas revisadas manualmente en supervivencia.
+
+### Implementación
+
+- WeaponCatalog carga el recurso común al inicializar los registros. Rechaza
+  IDs repetidos o inválidos, herencias cíclicas, padres ausentes y estadísticas
+  inválidas. Resuelve Based on independientemente del orden y conserva campos
+  desconocidos. Las definiciones son inmutables; Attributes se combina por clave.
+- Se mantienen IDs individuales y portadores originales. Type identifica la
+  definición del stack, incluso si su ítem base es otro. Se admite el ID simple
+  o prefijado por rafradek_tf2_weapons. Un Type inválido no dispara ni se sustituye
+  silenciosamente por otra arma. Todos los ítems individuales están en la pestaña
+  creativa, con nombres recuperados del archivo en_US.lang original.
+- CatalogWeaponItem amplía TF2WeaponItem, que se conserva. El hitscan mantiene
+  la dispersión, oclusión por bloques y acumulación de daño de todos los perdigones
+  por objetivo. Usa estadísticas originales, daño decimal, tiempos convertidos
+  de milisegundos a ticks y caída de daño por distancia. Conserva el límite
+  hitscan original de 256 bloques y melee de 2.4, modificable por Range;
+  Efficient range se conserva para la IA futura, no como límite del tiro.
+  Las armas automáticas disparan durante el uso sostenido; rifles tienen disparo
+  base sin scope/charge.
+- Las armas melee se ejecutan en el servidor mediante clic izquierdo o uso;
+  cancelan el segundo ataque vanilla y aplican alcance y cadencia propios.
+  Backstab, reparación de edificios y efectos complejos de melee quedan pendientes.
+- Ammo, ReserveAmmo, Reloading, ReloadTicks y deuda de consumo fraccionario se
+  almacenan en el stack. La recarga por cartucho puede interrumpirse al disparar;
+  la de cargador transfiere sólo la reserva disponible. Deseleccionar cancela la
+  recarga. Agotar la reserva no produce munición gratuita. Sneak + usar inicia
+  una recarga manual. Creativo dispara sin consumir; supervivencia tiene reservas
+  finitas. Los suministros se usan con el arma en la otra mano y sólo consumen
+  unidades aceptadas. Crafting/loot de los suministros sigue pendiente.
+- La inicialización migra el Ammo previo de Scattergun o el Clip histórico y añade la reserva.
+  Cambiar Type de un stack inicializado no concede munición nueva. Barras y
+  tooltips leen NBT sin modificarlo. Los cambios se hacen en el servidor y usan
+  la sincronización vanilla del ItemStack; no hay catálogos configurables por
+  mundo ni cambios remotos de definiciones en esta entrega.
+- Se recuperan modificadores de daño, cadencia, dispersión, alcance, perdigones,
+  clip, recarga y consumo, además de daño condicionado por fuego y curación por
+  golpe/muerte. Se admite Attributes con nombres o IDs numéricos originales,
+  combinando atributos incorporados y mejoras según su tipo aditivo/multiplicativo.
+  El índice de 249 IDs procede de las fuentes originales; no implica que los 249
+  comportamientos estén portados. Atributos no implementados se indican [pending].
+- ProjectileActions ofrece un punto de registro para emisores de entidades
+  modernas. No hay emisores aún: los lanzadores pendientes no consumen munición
+  ni producen hitscan falso. Widowmaker y Short Circuit conservan datos,
+  pero el consumo de metal sigue pendiente. Los tooltips distinguen comportamiento
+  parcial o pendiente en lugar de declarar estas armas completas.
+
+### Recursos cliente
+
+WeaponModels está restringido a Dist.CLIENT. El registro de modelos adicionales
+y la resolución de ItemOverrides seleccionan Render desde Type. Se conserva el
+modelo seleccionado con sus transforms para las perspectivas vanilla y sus
+overrides originales. No se creó una tabla gigante de overrides duplicados ni
+se añadieron nuevas exclusiones Gradle. Los JSON generados son sólo entradas de
+inventario ausentes que apuntan al recurso original correspondiente.
+
+Se añadieron el atlas de Monoculus y el padre normal del cuchillo, que tenía sólo
+overrides y podía devolver geometría vacía. Se repararon slots de textura
+indefinidos en Rocket Launcher, Liberty Launcher, Sharp Dresser y Splendid Screen
+apuntándolos a la textura existente de la misma arma, sin cambiar geometría o UV.
+Esos slots ya faltaban en las fuentes históricas; la fidelidad visual de sus UV
+necesita revisión manual. Se conserva la paleta histórica compartida gunslinger
+del modelo 3D knife_normal: su nombre no implica que la geometría sea un guante.
+
+Los 184 mappings no significan 184 geometrías únicas ni una revisión visual de
+las 188 armas en primera persona, tercera persona y suelo. Algunas armas usan
+sprites o recursos compartidos originales. missing_models.txt sigue identificando
+geometrías ausentes. Las animaciones/backstab dependientes de lógica antigua y
+las variantes de equipo requieren más trabajo. Las cuatro entradas sin Render
+heredable usan un icono provisional explícito y tooltip de recurso pendiente.
+
+### Pruebas reales
+
+- clean build con Java 17 y Forge 47.2.0: correcto, incluyendo 5 tests JUnit.
+- 5 tests unitarios: recuento/IDs, herencia y atributos, rechazo de duplicados y
+  padres/ciclos inválidos, conservación de cartuchos y cargadores, interrupción,
+  creatividad y límites de estado.
+- runGameTestServer: servidor iniciado correctamente, mundo aislado, 7 pruebas
+  pasadas. Verifican los 188 registros activos, Type histórico/inválido, NBT y
+  mejoras numéricas, daño y cooldown, oclusión, munición de lanzadores pendientes,
+  acumulación de perdigones, melee, suministros y uso continuo. Esto sí comprueba
+  comportamiento en un servidor Minecraft; no sustituye una partida multijugador.
+- runClient: arrancó y conectó al servidor integrado. La validación de baking
+  comprobó 188 rutas individuales + 188 rutas mediante portador Type, geometría
+  no vacía y sprites de caras sin missingno. Resultado: 184 mappings originales,
+  4 provisionales. No se revisaron manualmente todas las perspectivas/animaciones.
+- python tools/audit_resources.py --check --output resource-audit.json: correcto.
+  El informe contiene mapping y estado por arma; comprueba JSON, referencias
+  locales y variables de textura, más eventos de sonido del catálogo. No valida
+  todos los recursos vanilla ni convierte el contenido histórico a datapacks.
+- Queda un aviso de audio histórico fuera del catálogo: no existe
+  sounds/mob/sniper/sniper_laughhappy03.ogg. Se conserva su referencia para
+  recuperarlo con los NPCs. Dragon's Fury no dispone de sample de recarga original;
+  su evento se declara vacío de forma explícita, sin sustituirlo por otro sonido.
+
+Comandos reproducibles en PowerShell:
+
+```powershell
+$env:JAVA_HOME = 'G:\Programas\zulu-17'
+.\gradlew.bat clean build --gradle-user-home .gradle-local
+.\gradlew.bat runGameTestServer --gradle-user-home .gradle-local
+.\gradlew.bat runClient --gradle-user-home .gradle-local
+python tools/generate_weapon_resources.py
+python tools/audit_resources.py --check --output resource-audit.json
+```
+
+### Pendientes prioritarios
+
+Proyectiles/entidades y explosiones reales; críticos/minicríticos, DamageSources
+propios, resistencia/penetración y knockback; scope/charge y spin-up de Minigun;
+backstab, sangrado y otros efectos; atributos de equipamiento y cambios por
+salud/rage; reservas compartidas, recetas y loot; efectos de Medic y Spy; modelos
+únicos/animaciones y perspectivas revisadas visualmente. Después mercenarios y
+equipos, Engineer y bloques/interfaces, conservando las mejoras del fork.
+
+Referencias de API utilizadas: [registros Forge](https://docs.minecraftforge.net/en/1.20.1/concepts/registries/),
+[GameTest](https://docs.minecraftforge.net/en/1.20.x/misc/gametest/) y fuentes
+oficiales Forge 47.2.0 de ModelEvent y ModelBakery en la caché de dependencias.
+
+## Historial: primera entrega de estabilización (700cc11)
 
 Este documento describe el código actual, no una declaración de que el port
 esté terminado. Se conservan LGPL 2.1, los créditos y las fuentes históricas.

@@ -20,7 +20,8 @@ public final class TF2CreativeTabs {
                         output.accept(TF2Items.SCRAP_METAL.get());
                         output.accept(TF2Items.RECLAIMED_METAL.get());
                         output.accept(TF2Items.REFINED_METAL.get());
-                        output.accept(TF2Items.SCATTERGUN.get());
+                        TF2Items.WEAPONS.values().forEach(item -> output.accept(item.get().getDefaultInstance()));
+                        TF2Items.AMMO.values().forEach(item -> output.accept(item.get()));
                     })
                     .build());
 

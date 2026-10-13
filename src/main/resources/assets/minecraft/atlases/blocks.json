@@ -1,0 +1,5 @@
+{
+  "sources": [
+    { "type": "single", "resource": "rafradek_tf2_weapons:entity/tf2/monoculus" }
+  ]
+}

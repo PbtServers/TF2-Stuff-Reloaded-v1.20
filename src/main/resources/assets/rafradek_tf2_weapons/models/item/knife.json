@@ -1,4 +1,5 @@
 {
+    "parent": "rafradek_tf2_weapons:item/knife_normal",
     "overrides": [
         {
             "predicate": {

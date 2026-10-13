@@ -24,7 +24,8 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-            property 'forge.enabledGameTestNamespaces', 'tf2weapons'
+            property 'forge.enabledGameTestNamespaces', 'rafradek_tf2_weapons'
+            property 'tf2weapons.validateModels', 'true'
             mods {
                 tf2weapons {
                     source sourceSets.main
@@ -40,6 +41,14 @@ minecraft {
                 tf2weapons {
                     source sourceSets.main
                 }
+            }
+        }
+        gameTestServer {
+            workingDirectory project.file('run-gametest')
+            property 'forge.enabledGameTestNamespaces', 'rafradek_tf2_weapons'
+            property 'forge.logging.console.level', 'info'
+            mods {
+                tf2weapons { source sourceSets.main }
             }
         }
     }
@@ -70,6 +79,7 @@ dependencies {
     //runtimeOnly fg.deobf("mezz.jei:jei-1.20.1-forge:15.2.0.27")
     
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    testImplementation 'junit:junit:4.13.2'
 }
 
 sourceSets.main.java {

@@ -1,0 +1,1247 @@
+{
+  "0": {
+    "name": "DamageBonus",
+    "effect": "Damage",
+    "type": "PERCENTAGE"
+  },
+  "1": {
+    "name": "DamagePenalty",
+    "effect": "Damage",
+    "type": "PERCENTAGE"
+  },
+  "2": {
+    "name": "ClipSizeBonus",
+    "effect": "Clip Size",
+    "type": "PERCENTAGE"
+  },
+  "3": {
+    "name": "ClipSizePenalty",
+    "effect": "Clip Size",
+    "type": "PERCENTAGE"
+  },
+  "4": {
+    "name": "MinigunSpinBonus",
+    "effect": "Minigun Spinup",
+    "type": "INVERTED_PERCENTAGE"
+  },
+  "5": {
+    "name": "MinigunSpinPenalty",
+    "effect": "Minigun Spinup",
+    "type": "PERCENTAGE"
+  },
+  "6": {
+    "name": "FireRateBonus",
+    "effect": "Fire Rate",
+    "type": "INVERTED_PERCENTAGE"
+  },
+  "7": {
+    "name": "FireRatePenalty",
+    "effect": "Fire Rate",
+    "type": "INVERTED_PERCENTAGE"
+  },
+  "8": {
+    "name": "SpreadBonus",
+    "effect": "Spread",
+    "type": "INVERTED_PERCENTAGE"
+  },
+  "9": {
+    "name": "SpreadPenalty",
+    "effect": "Spread",
+    "type": "PERCENTAGE"
+  },
+  "10": {
+    "name": "PelletBonus",
+    "effect": "Pellet Count",
+    "type": "PERCENTAGE"
+  },
+  "11": {
+    "name": "PelletPenalty",
+    "effect": "Pellet Count",
+    "type": "PERCENTAGE"
+  },
+  "12": {
+    "name": "ReloadRateBonus",
+    "effect": "Reload Time",
+    "type": "INVERTED_PERCENTAGE"
+  },
+  "13": {
+    "name": "ReloadRatePenalty",
+    "effect": "Reload Time",
+    "type": "PERCENTAGE"
+  },
+  "14": {
+    "name": "KnockbackBonus",
+    "effect": "Knockback",
+    "type": "PERCENTAGE"
+  },
+  "15": {
+    "name": "KnockbackPenalty",
+    "effect": "Knockback",
+    "type": "PERCENTAGE"
+  },
+  "16": {
+    "name": "ChargeBonus",
+    "effect": "Charge",
+    "type": "PERCENTAGE"
+  },
+  "17": {
+    "name": "ChargePenalty",
+    "effect": "Charge",
+    "type": "INVERTED_PERCENTAGE"
+  },
+  "18": {
+    "name": "SpreadAdd",
+    "effect": "Spread",
+    "type": "ADDITIVE"
+  },
+  "19": {
+    "name": "ProjectileSpeedBonus",
+    "effect": "Proj Speed",
+    "type": "PERCENTAGE"
+  },
+  "20": {
+    "name": "ProjectileSpeedPenalty",
+    "effect": "Proj Speed",
+    "type": "PERCENTAGE"
+  },
+  "21": {
+    "name": "ExplosionRadiusBonus",
+    "effect": "Explosion Radius",
+    "type": "PERCENTAGE"
+  },
+  "22": {
+    "name": "ExplosionRadiusPenalty",
+    "effect": "Explosion Radius",
+    "type": "PERCENTAGE"
+  },
+  "23": {
+    "name": "DestroyOnImpact",
+    "effect": "Coll Remove",
+    "type": "ADDITIVE"
+  },
+  "24": {
+    "name": "AmmoEfficiencyBonus",
+    "effect": "Ammo Eff",
+    "type": "INVERTED_PERCENTAGE"
+  },
+  "25": {
+    "name": "AmmoEfficiencyPenalty",
+    "effect": "Ammo Eff",
+    "type": "PERCENTAGE"
+  },
+  "26": {
+    "name": "Penetration",
+    "effect": "Penetration",
+    "type": "ADDITIVE"
+  },
+  "27": {
+    "name": "HealRateBonus",
+    "effect": "Heal",
+    "type": "PERCENTAGE"
+  },
+  "28": {
+    "name": "HealRatePenalty",
+    "effect": "Heal",
+    "type": "PERCENTAGE"
+  },
+  "29": {
+    "name": "OverHealBonus",
+    "effect": "Overheal",
+    "type": "PERCENTAGE"
+  },
+  "30": {
+    "name": "OverHealPenalty",
+    "effect": "Overheal",
+    "type": "PERCENTAGE"
+  },
+  "31": {
+    "name": "BurnTimeBonus",
+    "effect": "Burn Time",
+    "type": "PERCENTAGE"
+  },
+  "32": {
+    "name": "BurnTimePenalty",
+    "effect": "Burn Time",
+    "type": "PERCENTAGE"
+  },
+  "33": {
+    "name": "HealthOnKill",
+    "effect": "Health Kill",
+    "type": "ADDITIVE"
+  },
+  "34": {
+    "name": "AccuracyBonus",
+    "effect": "Accuracy",
+    "type": "PERCENTAGE"
+  },
+  "35": {
+    "name": "EffectDurationBonus",
+    "effect": "Effect Duration",
+    "type": "PERCENTAGE"
+  },
+  "36": {
+    "name": "FlameRangeBonus",
+    "effect": "Flame Range",
+    "type": "PERCENTAGE"
+  },
+  "37": {
+    "name": "CritBurning",
+    "effect": "Crit Burn",
+    "type": "ADDITIVE"
+  },
+  "38": {
+    "name": "BurnOnHit",
+    "effect": "Burn Hit",
+    "type": "ADDITIVE"
+  },
+  "39": {
+    "name": "DestroyBlock",
+    "effect": "Destroy Block",
+    "type": "ADDITIVE"
+  },
+  "40": {
+    "name": "NoRandomCrit",
+    "effect": "Random Crit",
+    "type": "ADDITIVE"
+  },
+  "41": {
+    "name": "CritRocket",
+    "effect": "Crit Rocket",
+    "type": "ADDITIVE"
+  },
+  "42": {
+    "name": "CritMini",
+    "effect": "Crit Mini",
+    "type": "ADDITIVE"
+  },
+  "43": {
+    "name": "UberOnHit",
+    "effect": "Uber Hit",
+    "type": "ADDITIVE"
+  },
+  "44": {
+    "name": "BallRelease",
+    "effect": "Ball Release",
+    "type": "ADDITIVE"
+  },
+  "45": {
+    "name": "HealthPenalty",
+    "effect": "Health",
+    "type": "ADDITIVE"
+  },
+  "46": {
+    "name": "MovementBonus",
+    "effect": "Speed",
+    "type": "PERCENTAGE"
+  },
+  "47": {
+    "name": "MarkForDeathSelf",
+    "effect": "Mark Death",
+    "type": "ADDITIVE"
+  },
+  "48": {
+    "name": "CritOnKill",
+    "effect": "Crit Kill",
+    "type": "ADDITIVE"
+  },
+  "49": {
+    "name": "FireResistBonus",
+    "effect": "Fire Resist",
+    "type": "INVERTED_PERCENTAGE"
+  },
+  "50": {
+    "name": "DamageResistPenalty",
+    "effect": "Damage Resist",
+    "type": "INVERTED_PERCENTAGE"
+  },
+  "51": {
+    "name": "ExplosionResistBonus",
+    "effect": "Explosion Resist",
+    "type": "INVERTED_PERCENTAGE"
+  },
+  "52": {
+    "name": "DamageNonBurnPenalty",
+    "effect": "Damage Non Burn",
+    "type": "PERCENTAGE"
+  },
+  "53": {
+    "name": "CollectHeads",
+    "effect": "Kill Count",
+    "type": "ADDITIVE"
+  },
+  "54": {
+    "name": "ExplodeDeath",
+    "effect": "Explode Death",
+    "type": "ADDITIVE"
+  },
+  "55": {
+    "name": "RechargeBonus",
+    "effect": "Charge",
+    "type": "PERCENTAGE"
+  },
+  "56": {
+    "name": "UberRateBonus",
+    "effect": "Uber Rate",
+    "type": "PERCENTAGE"
+  },
+  "57": {
+    "name": "UberRatePenalty",
+    "effect": "Uber Rate",
+    "type": "PERCENTAGE"
+  },
+  "58": {
+    "name": "RangeIncrease",
+    "effect": "Range",
+    "type": "PERCENTAGE"
+  },
+  "59": {
+    "name": "ExplosiveBullets",
+    "effect": "Explode Bullet",
+    "type": "ADDITIVE"
+  },
+  "60": {
+    "name": "WeaponMode",
+    "effect": "Weapon Mode",
+    "type": "ADDITIVE"
+  },
+  "61": {
+    "name": "HealthOnHit",
+    "effect": "Health Hit",
+    "type": "ADDITIVE"
+  },
+  "62": {
+    "name": "Breakable",
+    "effect": "Breakable",
+    "type": "ADDITIVE"
+  },
+  "63": {
+    "name": "Focus",
+    "effect": "Focus",
+    "type": "ADDITIVE"
+  },
+  "64": {
+    "name": "KnockbackFAN",
+    "effect": "KnockbackFAN",
+    "type": "ADDITIVE"
+  },
+  "65": {
+    "name": "MinicritAirborne",
+    "effect": "Minicrit Airborne",
+    "type": "ADDITIVE"
+  },
+  "66": {
+    "name": "CannotAirblast",
+    "effect": "Cannot Airblast",
+    "type": "ADDITIVE"
+  },
+  "67": {
+    "name": "RageCrit",
+    "effect": "Rage Crit",
+    "type": "ADDITIVE"
+  },
+  "68": {
+    "name": "NoAmmo",
+    "effect": "No Ammo",
+    "type": "ADDITIVE"
+  },
+  "69": {
+    "name": "DamageBurnBonus",
+    "effect": "Damage Burning",
+    "type": "PERCENTAGE"
+  },
+  "70": {
+    "name": "RingFire",
+    "effect": "Ring Fire",
+    "type": "ADDITIVE"
+  },
+  "71": {
+    "name": "AmmoDrainSpinned",
+    "effect": "Ammo Spinned",
+    "type": "ADDITIVE"
+  },
+  "72": {
+    "name": "StickybombBonus",
+    "effect": "Stickybomb Count",
+    "type": "ADDITIVE"
+  },
+  "73": {
+    "name": "StickyControl",
+    "effect": "Weapon Mode",
+    "type": "ADDITIVE"
+  },
+  "74": {
+    "name": "ArmTimePenalty",
+    "effect": "Arm Time",
+    "type": "ADDITIVE"
+  },
+  "75": {
+    "name": "RepairBuilding",
+    "effect": "Repair Building",
+    "type": "ADDITIVE"
+  },
+  "76": {
+    "name": "PickBuilding",
+    "effect": "Pick Building",
+    "type": "ADDITIVE"
+  },
+  "77": {
+    "name": "Headshot",
+    "effect": "Headshot",
+    "type": "ADDITIVE"
+  },
+  "78": {
+    "name": "HealTarget",
+    "effect": "Heal Target",
+    "type": "ADDITIVE"
+  },
+  "79": {
+    "name": "NeedScope",
+    "effect": "Weapon Mode",
+    "type": "ADDITIVE"
+  },
+  "80": {
+    "name": "DamageBonusCharged",
+    "effect": "Damage Charged",
+    "type": "PERCENTAGE"
+  },
+  "81": {
+    "name": "SelfDamageReduced",
+    "effect": "Self Damage",
+    "type": "PERCENTAGE"
+  },
+  "82": {
+    "name": "StickybombPenalty",
+    "effect": "Stickybomb Count",
+    "type": "ADDITIVE"
+  },
+  "83": {
+    "name": "SpeedOnHitAlly",
+    "effect": "Speed Hit",
+    "type": "ADDITIVE"
+  },
+  "84": {
+    "name": "ChargedGrenades",
+    "effect": "Charged Grenades",
+    "type": "ADDITIVE"
+  },
+  "85": {
+    "name": "MetalAsAmmo",
+    "effect": "Metal Ammo",
+    "type": "ADDITIVE"
+  },
+  "86": {
+    "name": "MetalOnHit",
+    "effect": "Metal Hit",
+    "type": "ADDITIVE"
+  },
+  "87": {
+    "name": "EffectDurationBonus",
+    "effect": "Effect Duration",
+    "type": "PERCENTAGE"
+  },
+  "88": {
+    "name": "CloakRegenBonus",
+    "effect": "Charge",
+    "type": "PERCENTAGE"
+  },
+  "89": {
+    "name": "CloakDrainActivate",
+    "effect": "Cloak Drain",
+    "type": "PERCENTAGE"
+  },
+  "90": {
+    "name": "NoExternalCloak",
+    "effect": "No External Cloak",
+    "type": "ADDITIVE"
+  },
+  "91": {
+    "name": "CritStunned",
+    "effect": "Crit Stun",
+    "type": "ADDITIVE"
+  },
+  "92": {
+    "name": "BleedingDuration",
+    "effect": "Bleed",
+    "type": "ADDITIVE"
+  },
+  "93": {
+    "name": "MiniCritDistance",
+    "effect": "Minicrit Distance",
+    "type": "ADDITIVE"
+  },
+  "94": {
+    "name": "MaxHealthOnKill",
+    "effect": "Max Health Kill",
+    "type": "ADDITIVE"
+  },
+  "95": {
+    "name": "SpeedOnKill",
+    "effect": "Speed Kill",
+    "type": "ADDITIVE"
+  },
+  "96": {
+    "name": "ClipOnKill",
+    "effect": "Clip Kill",
+    "type": "ADDITIVE"
+  },
+  "97": {
+    "name": "AirborneBonus",
+    "effect": "Airborne Bonus",
+    "type": "ADDITIVE"
+  },
+  "98": {
+    "name": "DestroyProjectiles",
+    "effect": "Destroy Projectiles",
+    "type": "ADDITIVE"
+  },
+  "99": {
+    "name": "KnockbackRage",
+    "effect": "Knockback Rage",
+    "type": "ADDITIVE"
+  },
+  "100": {
+    "name": "DeployTimeBonus",
+    "effect": "Deploy Time",
+    "type": "INVERTED_PERCENTAGE"
+  },
+  "101": {
+    "name": "FireRateHealthBonus",
+    "effect": "Fire Rate Health",
+    "type": "PERCENTAGE"
+  },
+  "102": {
+    "name": "SpreadHealthPenalty",
+    "effect": "Spread Health",
+    "type": "PERCENTAGE"
+  },
+  "103": {
+    "name": "AutoFireClip",
+    "effect": "Auto Fire",
+    "type": "ADDITIVE"
+  },
+  "104": {
+    "name": "HealthRegen",
+    "effect": "Health Regen",
+    "type": "ADDITIVE"
+  },
+  "105": {
+    "name": "Gravity",
+    "effect": "Gravity",
+    "type": "ADDITIVE"
+  },
+  "106": {
+    "name": "FireRateHitBonus",
+    "effect": "Fire Rate Hit",
+    "type": "PERCENTAGE"
+  },
+  "107": {
+    "name": "ConstructionRateBonus",
+    "effect": "Construction Rate",
+    "type": "PERCENTAGE"
+  },
+  "108": {
+    "name": "ConstructionRatePenalty",
+    "effect": "Construction Rate",
+    "type": "PERCENTAGE"
+  },
+  "109": {
+    "name": "UpgradeRatePenalty",
+    "effect": "Upgrade Rate",
+    "type": "PERCENTAGE"
+  },
+  "110": {
+    "name": "TeleportCost",
+    "effect": "Teleporter Cost",
+    "type": "PERCENTAGE"
+  },
+  "111": {
+    "name": "MetalUsedOnHitPenalty",
+    "effect": "Metal Used",
+    "type": "INVERTED_PERCENTAGE"
+  },
+  "112": {
+    "name": "Looting",
+    "effect": "Looting",
+    "type": "ADDITIVE"
+  },
+  "113": {
+    "name": "ArmorBonus",
+    "effect": "Armor",
+    "type": "ADDITIVE"
+  },
+  "114": {
+    "name": "MeleeResistPenalty",
+    "effect": "Melee Resist",
+    "type": "PERCENTAGE"
+  },
+  "115": {
+    "name": "RangedResistBonus",
+    "effect": "Ranged Resist",
+    "type": "PERCENTAGE"
+  },
+  "116": {
+    "name": "HolsterTimePenalty",
+    "effect": "Holster Time",
+    "type": "PERCENTAGE"
+  },
+  "117": {
+    "name": "Unblockable",
+    "effect": "Unblockable",
+    "type": "ADDITIVE"
+  },
+  "118": {
+    "name": "SelfPushForceBonus",
+    "effect": "Self Push Force",
+    "type": "PERCENTAGE"
+  },
+  "119": {
+    "name": "Jetpack",
+    "effect": "Jetpack",
+    "type": "ADDITIVE"
+  },
+  "120": {
+    "name": "SentryBonus",
+    "effect": "Sentry Bonus",
+    "type": "PERCENTAGE"
+  },
+  "121": {
+    "name": "BuildingHealthBonus",
+    "effect": "Building Health",
+    "type": "PERCENTAGE"
+  },
+  "122": {
+    "name": "SentryFireRateBonus",
+    "effect": "Sentry Fire Rate",
+    "type": "INVERTED_PERCENTAGE"
+  },
+  "123": {
+    "name": "DispenserRangeBonus",
+    "effect": "Dispenser Range",
+    "type": "PERCENTAGE"
+  },
+  "124": {
+    "name": "ExtraSentryBonus",
+    "effect": "Extra Sentry",
+    "type": "ADDITIVE"
+  },
+  "125": {
+    "name": "OnyxProjectile",
+    "effect": "Onyx Projectile",
+    "type": "ADDITIVE"
+  },
+  "126": {
+    "name": "AirblastRatePenalty",
+    "effect": "Airblast Rate",
+    "type": "PERCENTAGE"
+  },
+  "127": {
+    "name": "NoHeadshot",
+    "effect": "No Headshot",
+    "type": "ADDITIVE"
+  },
+  "128": {
+    "name": "JarateOnHit",
+    "effect": "Jarate Hit",
+    "type": "ADDITIVE"
+  },
+  "129": {
+    "name": "NoBackstab",
+    "effect": "No Backstab",
+    "type": "ADDITIVE"
+  },
+  "130": {
+    "name": "AfterburnReductionBonus",
+    "effect": "Afterburn Reduction",
+    "type": "INVERTED_PERCENTAGE"
+  },
+  "131": {
+    "name": "ChargesBonus",
+    "effect": "Charges",
+    "type": "ADDITIVE"
+  },
+  "132": {
+    "name": "DamageBuildingPenalty",
+    "effect": "Damage Building",
+    "type": "PERCENTAGE"
+  },
+  "133": {
+    "name": "HitCrit",
+    "effect": "Hit Crit",
+    "type": "ADDITIVE"
+  },
+  "134": {
+    "name": "PiercingShots",
+    "effect": "Piercing",
+    "type": "ADDITIVE"
+  },
+  "135": {
+    "name": "JetpackNoItem",
+    "effect": "Jetpack Item",
+    "type": "ADDITIVE"
+  },
+  "136": {
+    "name": "SelfDamageIncreased",
+    "effect": "Self Damage",
+    "type": "PERCENTAGE"
+  },
+  "137": {
+    "name": "MiniCritBurning",
+    "effect": "Crit Burn",
+    "type": "ADDITIVE"
+  },
+  "138": {
+    "name": "DetonateFlare",
+    "effect": "Detonate",
+    "type": "ADDITIVE"
+  },
+  "139": {
+    "name": "ChargeStep",
+    "effect": "Charge Step",
+    "type": "ADDITIVE"
+  },
+  "140": {
+    "name": "SilentKill",
+    "effect": "Silent Kill",
+    "type": "ADDITIVE"
+  },
+  "141": {
+    "name": "DisguiseBackstab",
+    "effect": "Disguise Backstab",
+    "type": "ADDITIVE"
+  },
+  "142": {
+    "name": "NoDisguiseKit",
+    "effect": "No Disguise Kit",
+    "type": "ADDITIVE"
+  },
+  "143": {
+    "name": "SentryRangeBonus",
+    "effect": "Sentry Range",
+    "type": "PERCENTAGE"
+  },
+  "144": {
+    "name": "MetalBonus",
+    "effect": "Max Metal",
+    "type": "PERCENTAGE"
+  },
+  "145": {
+    "name": "DamagePlayerPenalty",
+    "effect": "Damage Player",
+    "type": "PERCENTAGE"
+  },
+  "146": {
+    "name": "MinicritAirborneSelf",
+    "effect": "Minicrit Airborne Self",
+    "type": "ADDITIVE"
+  },
+  "147": {
+    "name": "DeployTimePenalty",
+    "effect": "Deploy Time",
+    "type": "PERCENTAGE"
+  },
+  "148": {
+    "name": "GrantsTripleJump",
+    "effect": "Triple Jump",
+    "type": "ADDITIVE"
+  },
+  "149": {
+    "name": "DealDamageRage",
+    "effect": "Build Rage Damage",
+    "type": "ADDITIVE"
+  },
+  "150": {
+    "name": "MinicritRage",
+    "effect": "Minicrit Rage",
+    "type": "ADDITIVE"
+  },
+  "151": {
+    "name": "RocketSpecialist",
+    "effect": "Rocket Specialist",
+    "type": "ADDITIVE"
+  },
+  "152": {
+    "name": "GrenadeSpecialist",
+    "effect": "Grenade Specialist",
+    "type": "ADDITIVE"
+  },
+  "153": {
+    "name": "FireSpecialist",
+    "effect": "Fire Specialist",
+    "type": "ADDITIVE"
+  },
+  "154": {
+    "name": "RegenOnHit",
+    "effect": "Regen On Hit",
+    "type": "ADDITIVE"
+  },
+  "155": {
+    "name": "TraceRound",
+    "effect": "Trace Round",
+    "type": "ADDITIVE"
+  },
+  "156": {
+    "name": "LifeSteal",
+    "effect": "Life Steal",
+    "type": "ADDITIVE"
+  },
+  "157": {
+    "name": "BackstabDamageBonus",
+    "effect": "Backstab Damage",
+    "type": "PERCENTAGE"
+  },
+  "158": {
+    "name": "StunOnHit",
+    "effect": "Stun On Hit",
+    "type": "ADDITIVE"
+  },
+  "159": {
+    "name": "FuseTimeBonus",
+    "effect": "Fuse Time",
+    "type": "ADDITIVE"
+  },
+  "160": {
+    "name": "OverHealRatePenalty",
+    "effect": "Overheal Rate",
+    "type": "PERCENTAGE"
+  },
+  "161": {
+    "name": "UberRateOverhealPenalty",
+    "effect": "Uber Overheal Rate",
+    "type": "PERCENTAGE"
+  },
+  "162": {
+    "name": "UberShield",
+    "effect": "Uber Shield",
+    "type": "ADDITIVE"
+  },
+  "163": {
+    "name": "PassiveShield",
+    "effect": "Passive Shield",
+    "type": "ADDITIVE"
+  },
+  "164": {
+    "name": "CanOverload",
+    "effect": "Overload",
+    "type": "ADDITIVE"
+  },
+  "165": {
+    "name": "UberTimeBonus",
+    "effect": "Uber Time",
+    "type": "PERCENTAGE"
+  },
+  "166": {
+    "name": "UberOnHitRemove",
+    "effect": "Uber Hit Remove",
+    "type": "ADDITIVE"
+  },
+  "167": {
+    "name": "CloakOnHitRemove",
+    "effect": "Cloak Hit Remove",
+    "type": "ADDITIVE"
+  },
+  "168": {
+    "name": "FireResistPenalty",
+    "effect": "Fire Resist",
+    "type": "PERCENTAGE"
+  },
+  "169": {
+    "name": "AltFireChargeShot",
+    "effect": "Alt Fire Charge Shot",
+    "type": "ADDITIVE"
+  },
+  "170": {
+    "name": "CritsBecomeMiniCrits",
+    "effect": "Crits Become Mini Crits",
+    "type": "ADDITIVE"
+  },
+  "171": {
+    "name": "MedicHealingDecreased",
+    "effect": "Medic Heal",
+    "type": "PERCENTAGE"
+  },
+  "172": {
+    "name": "DamageHealthBonus",
+    "effect": "Damage Health",
+    "type": "PERCENTAGE"
+  },
+  "173": {
+    "name": "MoveSpeedHealthBonus",
+    "effect": "Move Speed Health",
+    "type": "PERCENTAGE"
+  },
+  "174": {
+    "name": "IncreaseCaptureRate",
+    "effect": "Capture Rate",
+    "type": "ADDITIVE"
+  },
+  "175": {
+    "name": "AirblastCostPenalty",
+    "effect": "Airblast Cost",
+    "type": "PERCENTAGE"
+  },
+  "176": {
+    "name": "CritFromBehind",
+    "effect": "Crit Behind",
+    "type": "ADDITIVE"
+  },
+  "177": {
+    "name": "HolsterTimeBonus",
+    "effect": "Holster Time",
+    "type": "PERCENTAGE"
+  },
+  "178": {
+    "name": "SelfPushForcePenalty",
+    "effect": "Self Push Force",
+    "type": "PERCENTAGE"
+  },
+  "179": {
+    "name": "DamageBuildingBonus",
+    "effect": "Damage Building",
+    "type": "PERCENTAGE"
+  },
+  "180": {
+    "name": "DamagePlayersPenalty",
+    "effect": "Damage Players",
+    "type": "PERCENTAGE"
+  },
+  "181": {
+    "name": "HealthFromHealersPenalty",
+    "effect": "Healh From Healers",
+    "type": "PERCENTAGE"
+  },
+  "182": {
+    "name": "HealthFromKitsBonus",
+    "effect": "Healh From Kits",
+    "type": "PERCENTAGE"
+  },
+  "183": {
+    "name": "CanRemoveSappers",
+    "effect": "Remove Sappers",
+    "type": "ADDITIVE"
+  },
+  "184": {
+    "name": "CritWet",
+    "effect": "Crit Wet",
+    "type": "ADDITIVE"
+  },
+  "185": {
+    "name": "DoubleAttack",
+    "effect": "Double Attack",
+    "type": "ADDITIVE"
+  },
+  "186": {
+    "name": "SpeedOnHit",
+    "effect": "Speed Hit",
+    "type": "ADDITIVE"
+  },
+  "187": {
+    "name": "HypeJump",
+    "effect": "Hype Jump",
+    "type": "ADDITIVE"
+  },
+  "188": {
+    "name": "SpeedRage",
+    "effect": "Speed Rage",
+    "type": "ADDITIVE"
+  },
+  "189": {
+    "name": "JumpRageReduction",
+    "effect": "Jump Add Rage",
+    "type": "ADDITIVE"
+  },
+  "190": {
+    "name": "TakeDamageRageReduction",
+    "effect": "Take Damage Add Rage",
+    "type": "ADDITIVE"
+  },
+  "191": {
+    "name": "MinicritBehind",
+    "effect": "Minicrit Behind",
+    "type": "ADDITIVE"
+  },
+  "192": {
+    "name": "JumpHeightBonus",
+    "effect": "Jump Height",
+    "type": "PERCENTAGE"
+  },
+  "193": {
+    "name": "WrapRelease",
+    "effect": "Ball Release",
+    "type": "ADDITIVE"
+  },
+  "194": {
+    "name": "ExplosionResistPenalty",
+    "effect": "Explosion Resist",
+    "type": "PERCENTAGE"
+  },
+  "195": {
+    "name": "DropHealthPackOnHit",
+    "effect": "Drop Health Pack On Hit",
+    "type": "ADDITIVE"
+  },
+  "196": {
+    "name": "HitSelfOnMiss",
+    "effect": "Hit Self On Miss",
+    "type": "ADDITIVE"
+  },
+  "197": {
+    "name": "AttackConnectedMedic",
+    "effect": "Attack Connected Medic",
+    "type": "ADDITIVE"
+  },
+  "198": {
+    "name": "MarkForDeath",
+    "effect": "Mark For Death",
+    "type": "ADDITIVE"
+  },
+  "199": {
+    "name": "FuseTimeReduced",
+    "effect": "Fuse Time",
+    "type": "PERCENTAGE"
+  },
+  "200": {
+    "name": "GrenadeNoRoll",
+    "effect": "Grenade Roll",
+    "type": "PERCENTAGE"
+  },
+  "201": {
+    "name": "ChargeDamageBonus",
+    "effect": "Max Charge Damage",
+    "type": "PERCENTAGE"
+  },
+  "202": {
+    "name": "ArmTimeBonus",
+    "effect": "Arm Time",
+    "type": "ADDITIVE"
+  },
+  "203": {
+    "name": "ImpactDamageBonus",
+    "effect": "Impact Damage",
+    "type": "PERCENTAGE"
+  },
+  "204": {
+    "name": "MeleeKillChargeRecharge",
+    "effect": "Melee Kill Charge",
+    "type": "ADDITIVE"
+  },
+  "205": {
+    "name": "TakeDamageReducesCharge",
+    "effect": "Take Damage Charge",
+    "type": "ADDITIVE"
+  },
+  "206": {
+    "name": "HealthOnKillRelative",
+    "effect": "Health Kill Relative",
+    "type": "ADDITIVE"
+  },
+  "207": {
+    "name": "Honorbound",
+    "effect": "Honorbound",
+    "type": "ADDITIVE"
+  },
+  "208": {
+    "name": "OnHitChargeRecharge",
+    "effect": "On Hit Charge Recharge",
+    "type": "ADDITIVE"
+  },
+  "209": {
+    "name": "MaxAmmoDecreased",
+    "effect": "Max Ammo Global",
+    "type": "PERCENTAGE"
+  },
+  "210": {
+    "name": "AmmoRechargeCharge",
+    "effect": "Ammo Charge Recharge",
+    "type": "ADDITIVE"
+  },
+  "211": {
+    "name": "DetonateOnHit",
+    "effect": "Detonate On Hit",
+    "type": "ADDITIVE"
+  },
+  "212": {
+    "name": "SlowOnHit",
+    "effect": "Slow On Hit",
+    "type": "ADDITIVE"
+  },
+  "213": {
+    "name": "DamageResistHalfHealthSpinningBonus",
+    "effect": "Damage Resist Half Health Spinning",
+    "type": "PERCENTAGE"
+  },
+  "214": {
+    "name": "MovementSpinPenalty",
+    "effect": "Speed Spin",
+    "type": "PERCENTAGE"
+  },
+  "215": {
+    "name": "CritNoDamage",
+    "effect": "Crit No Damage",
+    "type": "ADDITIVE"
+  },
+  "216": {
+    "name": "CritMakesLaugh",
+    "effect": "Crit Laugh",
+    "type": "ADDITIVE"
+  },
+  "217": {
+    "name": "RevengeCrits",
+    "effect": "Revenge Crits",
+    "type": "ADDITIVE"
+  },
+  "218": {
+    "name": "RepairRatePenalty",
+    "effect": "Repair Rate",
+    "type": "PERCENTAGE"
+  },
+  "219": {
+    "name": "SeeEnemyHealth",
+    "effect": "Enemy Health",
+    "type": "ADDITIVE"
+  },
+  "220": {
+    "name": "OrganHarvest",
+    "effect": "Organ Harvest",
+    "type": "ADDITIVE"
+  },
+  "221": {
+    "name": "HealRadial",
+    "effect": "Heal Radial",
+    "type": "ADDITIVE"
+  },
+  "222": {
+    "name": "MovementUberBonus",
+    "effect": "Movement Uber",
+    "type": "PERCENTAGE"
+  },
+  "223": {
+    "name": "ChargeRateOnKill",
+    "effect": "Charge Rate On Kill",
+    "type": "ADDITIVE"
+  },
+  "224": {
+    "name": "DamageAboveHalfHealthPenalty",
+    "effect": "Damage Above Half Health",
+    "type": "PERCENTAGE"
+  },
+  "225": {
+    "name": "DamageBelowHalfHealthBonus",
+    "effect": "Damage Above Half Health",
+    "type": "PERCENTAGE"
+  },
+  "226": {
+    "name": "NoFlinchCharged",
+    "effect": "No Flinch Charged",
+    "type": "ADDITIVE"
+  },
+  "227": {
+    "name": "KnockbackReductionAim",
+    "effect": "Knockback Aim",
+    "type": "ADDITIVE"
+  },
+  "228": {
+    "name": "IndependentCharge",
+    "effect": "Independent Charge",
+    "type": "ADDITIVE"
+  },
+  "229": {
+    "name": "BodyDamagePenalty",
+    "effect": "Body Damage",
+    "type": "PERCENTAGE"
+  },
+  "230": {
+    "name": "CannotHeadshotUnlessCharged",
+    "effect": "Independent Charge",
+    "type": "ADDITIVE"
+  },
+  "231": {
+    "name": "FocusRage",
+    "effect": "Focus Rage",
+    "type": "ADDITIVE"
+  },
+  "232": {
+    "name": "CloakDurationGlobalBonus",
+    "effect": "Cloak Duration Global",
+    "type": "PERCENTAGE"
+  },
+  "233": {
+    "name": "CloakOnKill",
+    "effect": "Cloak On Kill",
+    "type": "ADDITIVE"
+  },
+  "234": {
+    "name": "SpeedBoostOnKill",
+    "effect": "Speed Boost On Kill",
+    "type": "ADDITIVE"
+  },
+  "235": {
+    "name": "MeltsInFire",
+    "effect": "Melts In Fire",
+    "type": "ADDITIVE"
+  },
+  "236": {
+    "name": "FireProofOnHit",
+    "effect": "Fire Proof On Hit",
+    "type": "ADDITIVE"
+  },
+  "237": {
+    "name": "AbsorbHealthBackstab",
+    "effect": "Absorb Health Backstab",
+    "type": "ADDITIVE"
+  },
+  "238": {
+    "name": "CritOnKillSap",
+    "effect": "Crit On Kill Sap",
+    "type": "ADDITIVE"
+  },
+  "239": {
+    "name": "PierceResistances",
+    "effect": "Pierce Resistances",
+    "type": "ADDITIVE"
+  },
+  "240": {
+    "name": "DamageWhenDisguisedBonus",
+    "effect": "Damage When Disguised",
+    "type": "ADDITIVE"
+  },
+  "241": {
+    "name": "ProvideWhenActive",
+    "effect": "Provide When Active",
+    "type": "ADDITIVE"
+  },
+  "242": {
+    "name": "ReverseBuilding",
+    "effect": "ReverseBuilding",
+    "type": "ADDITIVE"
+  },
+  "243": {
+    "name": "HealthDegen",
+    "effect": "Health Regen",
+    "type": "ADDITIVE"
+  },
+  "244": {
+    "name": "Pyrovision",
+    "effect": "Pyrovision",
+    "type": "ADDITIVE"
+  },
+  "245": {
+    "name": "VisiblePyroland",
+    "effect": "Visible in Pyroland",
+    "type": "ADDITIVE"
+  },
+  "246": {
+    "name": "SpawnBubbles",
+    "effect": "Spawns Bubbles",
+    "type": "ADDITIVE"
+  },
+  "247": {
+    "name": "MedicHealBonus",
+    "effect": "Healing From Medic",
+    "type": "PERCENTAGE"
+  },
+  "248": {
+    "name": "MedicHealPenalty",
+    "effect": "Healing From Medic",
+    "type": "INVERTED_PERCENTAGE"
+  }
+}

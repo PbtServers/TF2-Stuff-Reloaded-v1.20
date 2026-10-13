@@ -16,6 +16,18 @@ public final class TF2Sounds {
     public static final RegistryObject<SoundEvent> WEAPON_RELOAD = register("weapon_reload");
     public static final RegistryObject<SoundEvent> WEAPON_NO_AMMO = register("weapon_no_ammo");
 
+    static {
+        java.util.Set<String> paths = new java.util.TreeSet<>();
+        for (var weapon : rafradek.tf2weapons.weapon.WeaponCatalog.get().all()) {
+            weapon.rawData().entrySet().stream().filter(e -> e.getKey().endsWith("sound"))
+                    .map(e -> ResourceLocation.tryParse(e.getValue().getAsString()))
+                    .filter(id -> id != null && id.getNamespace().equals(TF2StuffReloaded.MOD_ID))
+                    .forEach(id -> paths.add(id.getPath()));
+        }
+        paths.removeAll(java.util.Set.of("weapon_shoot", "weapon_reload", "weapon_no_ammo"));
+        paths.forEach(TF2Sounds::register);
+    }
+
     private TF2Sounds() {
     }
 

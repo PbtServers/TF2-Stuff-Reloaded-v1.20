@@ -1000,6 +1000,9 @@
 			"rafradek_tf2_weapons:weapon/dragons_fury_shoot"
 		]
 	},
+	"weapon.reload.dragonsfury": {
+		"sounds": []
+	},
 	"weapon.fire.dragonsfury.crit": {
 		"category": "neutral",
 		"sounds": [

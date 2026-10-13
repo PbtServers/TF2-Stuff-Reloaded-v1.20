@@ -24,3 +24,11 @@ libs
 
 # Files from Forge MDK
 forge*changelog.txt
+
+# Local port validation and generated interpreter caches
+.gradle-local/
+run-gametest/
+__pycache__/
+gametest-run.log
+client-validation.log
+build-validation.log
